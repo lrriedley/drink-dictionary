@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
         backgroundColor: Colors.black,
         appBar: AppBar(
           title: Text(
-            'DRINK DICTIONARY',
+            'DRINK',
             style: GoogleFonts.poppins(
               textStyle: const TextStyle(
                 color: Colors.white,
