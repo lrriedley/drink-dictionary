@@ -18,3 +18,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/Untitled design (5).png
+    - assets/Untitled design.png
+    - assets/Woodford Reserve*.png
+    - assets/Blanton's*.png
+    - assets/Bulleit Bourbon*.png
+    - assets/Old Forester*.png
