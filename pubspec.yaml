@@ -21,7 +21,5 @@ flutter:
   assets:
     - assets/Untitled design (5).png
     - assets/Untitled design.png
-    - assets/Woodford Reserve*.png
-    - assets/Blanton's*.png
-    - assets/Bulleit Bourbon*.png
-    - assets/Old Forester*.png
+    - assets/Bourbon/
+    - assets/fonts/9ecfd020e9cc0b676025df8390c0dc8cc2062523540887dd04bec0ef4d5a449c.ttf
