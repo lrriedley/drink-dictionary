@@ -1,33 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Expanded catergoryButton(String category) {
-  return Expanded(
-    child: Container(
-      margin: const EdgeInsets.all(8.0),
+class CategoryButton extends StatelessWidget {
+  const CategoryButton(
+      {super.key,
+      required this.color1,
+      required this.color2,
+      required this.color3,
+      required this.categoryName});
+
+  final Color color1;
+  final Color color2;
+  final Color color3;
+  final String categoryName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(8, 8, 3, 8),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.white.withOpacity(0.5),
-            spreadRadius: 1,
-            blurRadius: 7, // changes position of shadow
+        gradient: LinearGradient(
+          colors: [color1, color2, color3],
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+        ),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(15, 8, 15, 8),
+            child: Text(
+              categoryName,
+              style: GoogleFonts.poppins(
+                textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(
-          child: Text(
-            category,
-            style: GoogleFonts.poppins(
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
+    );
+  }
 }
+

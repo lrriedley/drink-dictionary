@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
+import 'Components/category_button.dart';
+import 'Components/drink_card.dart';
 
 void main() {
   runApp(const MainApp());
@@ -16,18 +18,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Container(
-        decoration: BoxDecoration(
-          gradient: RadialGradient(
-            colors: [
-              const Color(0xFFFF00FF).withOpacity(0.33),
-              Colors.black,
-            ],
-            center: const Alignment(0.5, 1.5),
-            focal: const Alignment(5, 1.5),
-            focalRadius: 1.5,
-          ),
-        ),
+      home: DefaultTabController(
+        length: 3,
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
@@ -86,6 +78,50 @@ class MainApp extends StatelessWidget {
                     ),
                   ),
                 ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      CategoryButton(
+                        color1: color1,
+                        color2: color2,
+                        color3: color3,
+                        categoryName: 'Spirits',
+                      ),
+                      CategoryButton(
+                        color1: color1,
+                        color2: color2,
+                        color3: color3,
+                        categoryName: 'Cocktails',
+                      ),
+                      CategoryButton(
+                          color1: color1,
+                          color2: color2,
+                          color3: color3,
+                          categoryName: 'Beer'),
+                      CategoryButton(
+                          color1: color1,
+                          color2: color2,
+                          color3: color3,
+                          categoryName: 'Wine'),
+                      CategoryButton(
+                          color1: color1,
+                          color2: color2,
+                          color3: color3,
+                          categoryName: 'Seltzer'),
+                      CategoryButton(
+                          color1: color1,
+                          color2: color2,
+                          color3: color3,
+                          categoryName: 'Mixers'),
+                      CategoryButton(
+                          color1: color1,
+                          color2: color2,
+                          color3: color3,
+                          categoryName: 'Other')
+                    ],
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
                   child: Text(
@@ -135,82 +171,59 @@ class MainApp extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class DrinkCard extends StatelessWidget {
-  final AssetImage drinkImage;
-  final String drinkName;
-  final String drinkDescription;
-
-  const DrinkCard({
-    Key? key,
-    required this.drinkImage,
-    required this.drinkName,
-    required this.drinkDescription,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    const Color color1 = Color(0xFF16191B);
-    const Color color2 = Color(0xFF283337);
-    const Color color3 = Color(0xFF16191B);
-    return Container(
-      margin: const EdgeInsets.all(8.0),
-      height: 212,
-      width: 150,
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [color1, color2, color3],
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-        ),
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 125,
-            width: 125,
-            child: Image(
-              image: drinkImage,
-              alignment: Alignment.topCenter,
+          bottomNavigationBar: ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
+            ),
+            child: Container(
+              height: 80, // Set this height as per your requirement
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [color1, color2, color3],
+                ),
+              ),
+              child: BottomAppBar(
+                color: Colors.transparent,
+                child: SizedBox(
+                  height: 50.0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Expanded(
+                        child: IconButton(
+                          icon: const Icon(Icons.add_circle_rounded,
+                              color: Colors.white),
+                          onPressed: () {},
+                        ),
+                      ),
+                      Expanded(
+                        child: IconButton(
+                          icon: const Icon(Icons.home_filled, color: Colors.white),
+                          onPressed: () {},
+                        ),
+                      ),
+                      Expanded(
+                        child: IconButton(
+                          icon: const Icon(Icons.local_bar, color: Colors.white),
+                          onPressed: () {},
+                        ),
+                      ),
+                      Expanded(
+                        child: IconButton(
+                          icon: const Icon(Icons.favorite, color: Colors.white),
+                          onPressed: () {},
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(left: 8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  drinkName,
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-                Text(
-                  drinkDescription,
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 9,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
