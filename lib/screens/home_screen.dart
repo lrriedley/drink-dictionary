@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
-import 'Components/category_button.dart';
-import 'Components/drink_card.dart';
-
+import 'package:drink_dictionary/Components/category_button.dart';
+import 'package:drink_dictionary/Components/drink_card.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -12,7 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -20,14 +18,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-  @override
-  final Color color1 = const Color(0xFF16191B);
-  final Color color2 = const Color(0xFF283337);
-  final Color color3 = const Color(0xFF16191B);
-  @override
-  Widget build(BuildContext context) {
+    final Color color1 = const Color(0xFF16191B);
+    final Color color2 = const Color(0xFF283337);
+    final Color color3 = const Color(0xFF16191B);
     return MaterialApp(
       home: DefaultTabController(
         length: 3,
@@ -212,13 +205,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Expanded(
                         child: IconButton(
-                          icon: const Icon(Icons.home_filled, color: Colors.white),
+                          icon: const Icon(Icons.home_filled,
+                              color: Colors.white),
                           onPressed: () {},
                         ),
                       ),
                       Expanded(
                         child: IconButton(
-                          icon: const Icon(Icons.local_bar, color: Colors.white),
+                          icon:
+                              const Icon(Icons.local_bar, color: Colors.white),
                           onPressed: () {},
                         ),
                       ),
@@ -238,3 +233,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
