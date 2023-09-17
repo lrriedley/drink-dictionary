@@ -1,3 +1,4 @@
+import 'package:drink_dictionary/screens/spirits_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
@@ -13,6 +14,7 @@ class MainApp extends StatelessWidget {
       initialRoute: HomeScreen.id,
       routes: {
         HomeScreen.id: (context) => HomeScreen(),
+        SpiritsScreen.id: (context) => SpiritsScreen(),
       },
     );
   }

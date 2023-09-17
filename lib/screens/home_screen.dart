@@ -1,8 +1,9 @@
+import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
-import 'package:drink_dictionary/Components/category_button.dart';
-import 'package:drink_dictionary/Components/drink_card.dart';
+import 'package:drink_dictionary/components/category_button.dart';
+import 'package:drink_dictionary/components/drink_card.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -175,60 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          bottomNavigationBar: ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
-            ),
-            child: Container(
-              height: 80, // Set this height as per your requirement
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [color1, color2, color3],
-                ),
-              ),
-              child: BottomAppBar(
-                color: Colors.transparent,
-                child: SizedBox(
-                  height: 50.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Expanded(
-                        child: IconButton(
-                          icon: const Icon(Icons.add_circle_rounded,
-                              color: Colors.white),
-                          onPressed: () {},
-                        ),
-                      ),
-                      Expanded(
-                        child: IconButton(
-                          icon: const Icon(Icons.home_filled,
-                              color: Colors.white),
-                          onPressed: () {},
-                        ),
-                      ),
-                      Expanded(
-                        child: IconButton(
-                          icon:
-                              const Icon(Icons.local_bar, color: Colors.white),
-                          onPressed: () {},
-                        ),
-                      ),
-                      Expanded(
-                        child: IconButton(
-                          icon: const Icon(Icons.favorite, color: Colors.white),
-                          onPressed: () {},
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
+          bottomNavigationBar: const NewTabBar(),
         ),
       ),
     );
