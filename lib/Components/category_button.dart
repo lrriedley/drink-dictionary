@@ -21,7 +21,7 @@ class CategoryButton extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => SpiritsScreen(),
+            builder: (context) => const SpiritsScreen(),
           ),
         );
       },

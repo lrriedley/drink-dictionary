@@ -7,6 +7,8 @@ import 'package:drink_dictionary/components/drink_card.dart';
 
 class SpiritsScreen extends StatefulWidget {
   static const String id = 'spirits_screen';
+
+  const SpiritsScreen({super.key});
   @override
   _SpiritsScreenState createState() => _SpiritsScreenState();
 }
@@ -19,9 +21,9 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final Color color1 = const Color(0xFF16191B);
-    final Color color2 = const Color(0xFF283337);
-    final Color color3 = const Color(0xFF16191B);
+    const Color color1 = Color(0xFF16191B);
+    const Color color2 = Color(0xFF283337);
+    const Color color3 = Color(0xFF16191B);
     return MaterialApp(
       home: DefaultTabController(
         length: 3,
@@ -50,7 +52,7 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                     height: 40.0, // specify the height to make it smaller
                     padding: const EdgeInsets.fromLTRB(8.0, 0, 0, 0),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [color1, color2, color3],
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
@@ -83,7 +85,7 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                     ),
                   ),
                 ),
-                SingleChildScrollView(
+                const SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [

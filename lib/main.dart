@@ -13,8 +13,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: HomeScreen.id,
       routes: {
-        HomeScreen.id: (context) => HomeScreen(),
-        SpiritsScreen.id: (context) => SpiritsScreen(),
+        HomeScreen.id: (context) => const HomeScreen(),
+        SpiritsScreen.id: (context) => const SpiritsScreen(),
       },
     );
   }
