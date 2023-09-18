@@ -135,7 +135,7 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                 ),
                 Column(
                   children: [
-                    for (var i = 0; i < bourbon.length; i += 2)
+                    for (var i = 0; i < bourbon.length; i += 4)
                       Row(
                         children: [
                           if (i < bourbon.length)
@@ -149,6 +149,20 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                               drinkImage: bourbon[i + 1]['drinkImage'],
                               drinkName: bourbon[i + 1]['drinkName'],
                               drinkDescription: bourbon[i + 1]
+                                  ['drinkDescription'],
+                            ),
+                          if (i + 2 < bourbon.length)
+                            DrinkCard(
+                              drinkImage: bourbon[i + 2]['drinkImage'],
+                              drinkName: bourbon[i + 2]['drinkName'],
+                              drinkDescription: bourbon[i + 2]
+                                  ['drinkDescription'],
+                            ),
+                          if (i + 3 < bourbon.length)
+                            DrinkCard(
+                              drinkImage: bourbon[i + 3]['drinkImage'],
+                              drinkName: bourbon[i + 3]['drinkName'],
+                              drinkDescription: bourbon[i + 3]
                                   ['drinkDescription'],
                             ),
                         ],
