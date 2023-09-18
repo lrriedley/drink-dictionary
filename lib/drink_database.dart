@@ -13,41 +13,63 @@ List<Map<String, dynamic>> drinks = [
   },
 ];
 
-List<Map<String, dynamic>> bourbon = [
+List<Map<String, dynamic>> spirits = [
   {
-    'drinkImage': const AssetImage('assets/Bourbon/Bulleit Bourbon.png'),
+    'drinkImage':
+        const AssetImage('assets/Whiskey/Bourbon/Bulleit Bourbon.png'),
     'drinkName': 'Bulleit Bourbon',
     'drinkDescription':
         'Bourbon with a bold, spicy character with a finish that\'s clean and smooth.',
+    'subcategory': 'Bourbon'
   },
   {
-    'drinkImage': const AssetImage('assets/Bourbon/Blanton\'s.png'),
+    'drinkImage': const AssetImage('assets/Whiskey/Bourbon/Blanton\'s.png'),
     'drinkName': 'Blanton\'s',
     'drinkDescription':
         'A sweet, well-balanced single barrel bourbon with notes of citrus and oak.',
+    'subcategory': 'Bourbon'
   },
   {
-    'drinkImage': const AssetImage('assets/Bourbon/Woodford Reserve.png'),
+    'drinkImage':
+        const AssetImage('assets/Whiskey/Bourbon/Woodford Reserve.png'),
     'drinkName': 'Woodford Reserve',
     'drinkDescription': 'A classic, well-balanced bourbon.',
+    'subcategory': 'Bourbon'
   },
   {
-    'drinkImage': const AssetImage('assets/Bourbon/Jim Beam.png'),
+    'drinkImage': const AssetImage('assets/Whiskey/Bourbon/Jim Beam.png'),
     'drinkName': 'Jim Beam',
     'drinkDescription':
         'Classic American whiskey known for its smooth and mellow flavor with hints of caramel and vanilla.',
+    'subcategory': 'Bourbon'
   },
   {
-    'drinkImage': const AssetImage('assets/Bourbon/Knob Creek.png'),
+    'drinkImage': const AssetImage('assets/Whiskey/Bourbon/Knob Creek.png'),
     'drinkName': 'Knob Creek',
     'drinkDescription':
         'A full-bodied bourbon whiskey known for its rich, sweet, and robust flavor profile, featuring notes of caramel, toasted oak, and a long, warming finish. It\'s aged for a minimum of nine years, resulting in a deep and complex bourbon experience.',
+    'subcategory': 'Bourbon'
   },
   {
-    'drinkImage': const AssetImage('assets/Bourbon/Old Forester.png'),
+    'drinkImage': const AssetImage('assets/Whiskey/Bourbon/Old Forester.png'),
     'drinkName': 'Old Forester',
     'drinkDescription':
         'A historic bourbon brand renowned for its smooth and balanced flavor profile, marked by notes of caramel, vanilla, and a hint of spice, making it a classic choice for bourbon enthusiasts.',
+    'subcategory': 'Bourbon'
+  },
+  {
+    'drinkImage':
+        const AssetImage('assets/Whiskey/Irish Whiskey/Proper Twelve.png'),
+    'drinkName': 'Proper Twelve',
+    'drinkDescription': '',
+    'subcategory': 'Irish Whiskey',
+  },
+  {
+    'drinkImage':
+        const AssetImage('assets/Whiskey/Irish Whiskey/Tullamore D.E.W..png'),
+    'drinkName': 'Tullamore D.E.W.',
+    'drinkDescription': '',
+    'subcategory': 'Irish Whiskey',
   },
   // {
   //   'drinkImage': const AssetImage('assets/Bourbon/Buffalo Trace.png'),

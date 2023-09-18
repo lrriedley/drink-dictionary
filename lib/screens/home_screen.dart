@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      for (var bourbonDrink in bourbon)
+                      for (var bourbonDrink in spirits)
                         DrinkCard(
                           drinkImage: bourbonDrink['drinkImage'],
                           drinkName: bourbonDrink['drinkName'],

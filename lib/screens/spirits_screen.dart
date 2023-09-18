@@ -135,34 +135,34 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                 ),
                 Column(
                   children: [
-                    for (var i = 0; i < bourbon.length; i += 4)
+                    for (var i = 0; i < spirits.length; i += 4)
                       Row(
                         children: [
-                          if (i < bourbon.length)
+                          if (i < spirits.length)
                             DrinkCard(
-                              drinkImage: bourbon[i]['drinkImage'],
-                              drinkName: bourbon[i]['drinkName'],
-                              drinkDescription: bourbon[i]['drinkDescription'],
+                              drinkImage: spirits[i]['drinkImage'],
+                              drinkName: spirits[i]['drinkName'],
+                              drinkDescription: spirits[i]['drinkDescription'],
                             ),
-                          if (i + 1 < bourbon.length)
+                          if (i + 1 < spirits.length)
                             DrinkCard(
-                              drinkImage: bourbon[i + 1]['drinkImage'],
-                              drinkName: bourbon[i + 1]['drinkName'],
-                              drinkDescription: bourbon[i + 1]
+                              drinkImage: spirits[i + 1]['drinkImage'],
+                              drinkName: spirits[i + 1]['drinkName'],
+                              drinkDescription: spirits[i + 1]
                                   ['drinkDescription'],
                             ),
-                          if (i + 2 < bourbon.length)
+                          if (i + 2 < spirits.length)
                             DrinkCard(
-                              drinkImage: bourbon[i + 2]['drinkImage'],
-                              drinkName: bourbon[i + 2]['drinkName'],
-                              drinkDescription: bourbon[i + 2]
+                              drinkImage: spirits[i + 2]['drinkImage'],
+                              drinkName: spirits[i + 2]['drinkName'],
+                              drinkDescription: spirits[i + 2]
                                   ['drinkDescription'],
                             ),
-                          if (i + 3 < bourbon.length)
+                          if (i + 3 < spirits.length)
                             DrinkCard(
-                              drinkImage: bourbon[i + 3]['drinkImage'],
-                              drinkName: bourbon[i + 3]['drinkName'],
-                              drinkDescription: bourbon[i + 3]
+                              drinkImage: spirits[i + 3]['drinkImage'],
+                              drinkName: spirits[i + 3]['drinkName'],
+                              drinkDescription: spirits[i + 3]
                                   ['drinkDescription'],
                             ),
                         ],
