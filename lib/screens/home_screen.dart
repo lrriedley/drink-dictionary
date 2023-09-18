@@ -85,47 +85,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                const SingleChildScrollView(
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       CategoryButton(
-                        color1: color1,
-                        color2: color2,
-                        color3: color3,
                         categoryName: 'Spirits',
                       ),
                       CategoryButton(
-                        color1: color1,
-                        color2: color2,
-                        color3: color3,
                         categoryName: 'Cocktails',
                       ),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Beer'),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Wine'),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Seltzer'),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Mixers'),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Other')
+                      CategoryButton(categoryName: 'Beer'),
+                      CategoryButton(categoryName: 'Wine'),
+                      CategoryButton(categoryName: 'Seltzer'),
+                      CategoryButton(categoryName: 'Mixers'),
+                      CategoryButton(categoryName: 'Other')
                     ],
                   ),
                 ),

@@ -85,47 +85,18 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                     ),
                   ),
                 ),
-                const SingleChildScrollView(
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      CategoryButton(
-                        color1: color1,
-                        color2: color2,
-                        color3: color3,
-                        categoryName: 'Spirits',
-                      ),
-                      CategoryButton(
-                        color1: color1,
-                        color2: color2,
-                        color3: color3,
-                        categoryName: 'Cocktails',
-                      ),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Beer'),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Wine'),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Seltzer'),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Mixers'),
-                      CategoryButton(
-                          color1: color1,
-                          color2: color2,
-                          color3: color3,
-                          categoryName: 'Other')
+                      CategoryButton(categoryName: 'Whiskey'),
+                      CategoryButton(categoryName: 'Brandy'),
+                      CategoryButton(categoryName: 'Tequila'),
+                      CategoryButton(categoryName: 'Mezcal'),
+                      CategoryButton(categoryName: 'Vodka'),
+                      CategoryButton(categoryName: 'Gin'),
+                      CategoryButton(categoryName: 'Rum'),
+                      CategoryButton(categoryName: 'Liqueur')
                     ],
                   ),
                 ),
@@ -162,18 +133,27 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                         fontSize: 20),
                   ),
                 ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      for (var bourbonDrink in bourbon)
-                        DrinkCard(
-                          drinkImage: bourbonDrink['drinkImage'],
-                          drinkName: bourbonDrink['drinkName'],
-                          drinkDescription: bourbonDrink['drinkDescription'],
-                        ),
-                    ],
-                  ),
+                Column(
+                  children: [
+                    for (var i = 0; i < bourbon.length; i += 2)
+                      Row(
+                        children: [
+                          if (i < bourbon.length)
+                            DrinkCard(
+                              drinkImage: bourbon[i]['drinkImage'],
+                              drinkName: bourbon[i]['drinkName'],
+                              drinkDescription: bourbon[i]['drinkDescription'],
+                            ),
+                          if (i + 1 < bourbon.length)
+                            DrinkCard(
+                              drinkImage: bourbon[i + 1]['drinkImage'],
+                              drinkName: bourbon[i + 1]['drinkName'],
+                              drinkDescription: bourbon[i + 1]
+                                  ['drinkDescription'],
+                            ),
+                        ],
+                      ),
+                  ],
                 ),
               ],
             ),

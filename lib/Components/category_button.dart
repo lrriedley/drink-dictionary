@@ -3,16 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoryButton extends StatelessWidget {
-  const CategoryButton(
-      {super.key,
-      required this.color1,
-      required this.color2,
-      required this.color3,
-      required this.categoryName});
+  CategoryButton({super.key, required this.categoryName});
 
-  final Color color1;
-  final Color color2;
-  final Color color3;
+  Color color1 = Color(0xFF16191B);
+  Color color2 = Color(0xFF283337);
+  Color color3 = Color(0xFF16191B);
   final String categoryName;
 
   @override
