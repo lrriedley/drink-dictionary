@@ -141,11 +141,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     children: [
                       for (var bourbonDrink in spirits)
-                        DrinkCard(
-                          drinkImage: bourbonDrink['drinkImage'],
-                          drinkName: bourbonDrink['drinkName'],
-                          drinkDescription: bourbonDrink['drinkDescription'],
-                        ),
+                        if (bourbonDrink['SubcategoryName'] == 'Bourbon')
+                          DrinkCard(
+                            drinkImage: bourbonDrink['drinkImage'],
+                            drinkName: bourbonDrink['drinkName'],
+                            drinkDescription: bourbonDrink['drinkDescription'],
+                          ),
                     ],
                   ),
                 ),

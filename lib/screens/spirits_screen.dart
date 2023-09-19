@@ -126,7 +126,7 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
                   child: Text(
-                    'Bourbon',
+                    'Spirits',
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
