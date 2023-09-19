@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoryButton extends StatelessWidget {
-  CategoryButton({super.key, required this.categoryName});
+  CategoryButton({super.key, required this.categoryName, required this.image});
 
-  Color color1 = Color(0xFF16191B);
-  Color color2 = Color(0xFF283337);
-  Color color3 = Color(0xFF16191B);
   final String categoryName;
+  final AssetImage image;
 
   @override
   Widget build(BuildContext context) {
@@ -21,31 +19,35 @@ class CategoryButton extends StatelessWidget {
         );
       },
       child: Container(
+        width: 155,
+        height: 82,
         margin: const EdgeInsets.fromLTRB(8, 8, 3, 8),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [color1, color2, color3],
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
+          image: DecorationImage(
+            image: image,
+            fit: BoxFit.cover,
           ),
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(15, 8, 15, 8),
-              child: Text(
-                categoryName,
-                style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Text(
+                  categoryName,
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+                  textAlign: TextAlign.right,
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ],

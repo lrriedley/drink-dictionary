@@ -90,16 +90,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     children: [
                       CategoryButton(
-                        categoryName: 'Spirits',
-                      ),
-                      CategoryButton(
-                        categoryName: 'Cocktails',
-                      ),
-                      CategoryButton(categoryName: 'Beer'),
-                      CategoryButton(categoryName: 'Wine'),
-                      CategoryButton(categoryName: 'Seltzer'),
-                      CategoryButton(categoryName: 'Mixers'),
-                      CategoryButton(categoryName: 'Other')
+                          categoryName: 'Spirits',
+                          image: AssetImage(
+                              'assets/Drink Category Photos/Spirits/Spirits.png')),
+                      // CategoryButton(
+                      //   categoryName: 'Cocktails',
+                      // ),
+                      // CategoryButton(categoryName: 'Beer'),
+                      // CategoryButton(categoryName: 'Wine'),
+                      // CategoryButton(categoryName: 'Seltzer'),
+                      // CategoryButton(categoryName: 'Mixers'),
+                      // CategoryButton(categoryName: 'Other')
                     ],
                   ),
                 ),

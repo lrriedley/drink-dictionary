@@ -89,14 +89,17 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      CategoryButton(categoryName: 'Whiskey'),
-                      CategoryButton(categoryName: 'Brandy'),
-                      CategoryButton(categoryName: 'Tequila'),
-                      CategoryButton(categoryName: 'Mezcal'),
-                      CategoryButton(categoryName: 'Vodka'),
-                      CategoryButton(categoryName: 'Gin'),
-                      CategoryButton(categoryName: 'Rum'),
-                      CategoryButton(categoryName: 'Liqueur')
+                      CategoryButton(
+                          categoryName: 'Whiskey',
+                          image:
+                              AssetImage('assets/Whiskey/Whiskey Page.jpeg')),
+                      // CategoryButton(categoryName: 'Brandy'),
+                      // CategoryButton(categoryName: 'Tequila'),
+                      // CategoryButton(categoryName: 'Mezcal'),
+                      // CategoryButton(categoryName: 'Vodka'),
+                      // CategoryButton(categoryName: 'Gin'),
+                      // CategoryButton(categoryName: 'Rum'),
+                      // CategoryButton(categoryName: 'Liqueur')
                     ],
                   ),
                 ),
