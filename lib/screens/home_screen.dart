@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/components/category_button.dart';
 import 'package:drink_dictionary/components/drink_card.dart';
+import 'package:drink_dictionary/components/search_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -46,45 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 40.0, // specify the height to make it smaller
-                    padding: const EdgeInsets.fromLTRB(8.0, 0, 0, 0),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [color1, color2, color3],
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft,
-                      ),
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: TextField(
-                            textAlignVertical: TextAlignVertical.center,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: 'Search for your favorite cocktail',
-                              hintStyle: GoogleFonts.poppins(
-                                color: Colors.white,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 8),
-                          child: Icon(
-                            Icons.search,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                NightSearchBar(searchText: 'Search for your favorite cocktail'),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -93,12 +56,26 @@ class _HomeScreenState extends State<HomeScreen> {
                           categoryName: 'Spirits',
                           image: AssetImage(
                               'assets/Drink Category Photos/Spirits/Spirits.png')),
-                      // CategoryButton(
-                      //   categoryName: 'Cocktails',
-                      // ),
-                      // CategoryButton(categoryName: 'Beer'),
-                      // CategoryButton(categoryName: 'Wine'),
-                      // CategoryButton(categoryName: 'Seltzer'),
+                      CategoryButton(
+                        categoryName: 'Cocktails',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Cocktails/Cocktails.png'),
+                      ),
+                      CategoryButton(
+                        categoryName: 'Beer',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Beer/Beer.png'),
+                      ),
+                      CategoryButton(
+                        categoryName: 'Wine',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Wine/Wine.png'),
+                      ),
+                      CategoryButton(
+                        categoryName: 'Seltzer',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Seltzer/Seltzer.png'),
+                      ),
                       // CategoryButton(categoryName: 'Mixers'),
                       // CategoryButton(categoryName: 'Other')
                     ],

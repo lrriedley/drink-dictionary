@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+Map<String, List<String>> categories = {
+  'Spirits': ['Whiskey', 'Tequila', 'Vodka', 'Brandy', 'Gin', 'Rum', 'Liqueur']
+};
+
 List<Map<String, dynamic>> drinks = [
   {
     'drinkImage': const AssetImage('assets/Untitled design (5).png'),
@@ -29,13 +33,13 @@ List<Map<String, dynamic>> spirits = [
         'A sweet, well-balanced single barrel bourbon with notes of citrus and oak.',
     'SubcategoryName': 'Bourbon'
   },
-  // {
-  //   'drinkImage': const AssetImage('assets/Bourbon/Buffalo Trace.png'),
-  //   'drinkName': 'Buffalo Trace',
-  //   'drinkDescription':
-  //       'A historic bourbon known for its rich and complex flavor profile. Buffalo Trace offers a delightful combination of caramel, toffee, and a touch of fruitiness.',
-  //   'SubcategoryName': 'Bourbon'
-  // },
+  {
+    'drinkImage': const AssetImage('assets/Whiskey/Bourbon/Buffalo Trace.png'),
+    'drinkName': 'Buffalo Trace',
+    'drinkDescription':
+        'A historic bourbon known for its rich and complex flavor profile. Buffalo Trace offers a delightful combination of caramel, toffee, and a touch of fruitiness.',
+    'SubcategoryName': 'Bourbon'
+  },
   {
     'drinkImage':
         const AssetImage('assets/Whiskey/Bourbon/Woodford Reserve.png'),

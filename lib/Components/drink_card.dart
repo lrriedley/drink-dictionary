@@ -28,11 +28,7 @@ class DrinkCard extends StatelessWidget {
               height: 106,
               width: 97,
               decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [color1, color2, color3],
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                ),
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(20.0),
               ),
               child: Image(

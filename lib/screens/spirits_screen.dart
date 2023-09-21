@@ -1,3 +1,4 @@
+import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,20 +6,12 @@ import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/components/category_button.dart';
 import 'package:drink_dictionary/components/drink_card.dart';
 
-class SpiritsScreen extends StatefulWidget {
+class SpiritsScreen extends StatelessWidget {
   static const String id = 'spirits_screen';
+  // final String category;
+  // final List<String> subcategories;
 
-  const SpiritsScreen({super.key});
-  @override
-  _SpiritsScreenState createState() => _SpiritsScreenState();
-}
-
-class _SpiritsScreenState extends State<SpiritsScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
+  // // const SpiritsScreen({super.key,this.category, required this.subcategories});
   @override
   Widget build(BuildContext context) {
     const Color color1 = Color(0xFF16191B);
@@ -46,60 +39,45 @@ class _SpiritsScreenState extends State<SpiritsScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 40.0, // specify the height to make it smaller
-                    padding: const EdgeInsets.fromLTRB(8.0, 0, 0, 0),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [color1, color2, color3],
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft,
-                      ),
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: TextField(
-                            textAlignVertical: TextAlignVertical.center,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: 'Search for your favorite spirits',
-                              hintStyle: GoogleFonts.poppins(
-                                color: Colors.white,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 8),
-                          child: Icon(
-                            Icons.search,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                NightSearchBar(searchText: 'Search for your favorite spirits'),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       CategoryButton(
                           categoryName: 'Whiskey',
-                          image:
-                              AssetImage('assets/Whiskey/Whiskey Page.jpeg')),
-                      // CategoryButton(categoryName: 'Brandy'),
-                      // CategoryButton(categoryName: 'Tequila'),
-                      // CategoryButton(categoryName: 'Mezcal'),
-                      // CategoryButton(categoryName: 'Vodka'),
-                      // CategoryButton(categoryName: 'Gin'),
-                      // CategoryButton(categoryName: 'Rum'),
-                      // CategoryButton(categoryName: 'Liqueur')
+                          image: AssetImage(
+                              'assets/Drink Category Photos/Spirits/Whiskey Page.jpeg')),
+                      CategoryButton(
+                        categoryName: 'Tequila',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Spirits/Tequila Page.png'),
+                      ),
+                      CategoryButton(
+                        categoryName: 'Vodka',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Spirits/Vodka Page.jpeg'),
+                      ),
+                      CategoryButton(
+                        categoryName: 'Brandy',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Spirits/Brandy Page.jpeg'),
+                      ),
+                      CategoryButton(
+                        categoryName: 'Gin',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Spirits/Gin Page.jpeg'),
+                      ),
+                      CategoryButton(
+                        categoryName: 'Rum',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Spirits/Rum Page.png'),
+                      ),
+                      CategoryButton(
+                        categoryName: 'Liqueur',
+                        image: AssetImage(
+                            'assets/Drink Category Photos/Spirits/Liqueur.jpg'),
+                      )
                     ],
                   ),
                 ),
