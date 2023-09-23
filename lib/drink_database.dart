@@ -7,8 +7,8 @@ Map<String, List<String>> category = {
 Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
   'Spirits': [
     {
-      'subcategoryImage': const AssetImage(
-          'assets/Drink Category Photos/Spirits/Whiskey Page.jpeg'),
+      'subcategoryImage':
+          const AssetImage('assets/Drink Category Photos/Spirits/Whiskey.png'),
       'subcategoryName': 'Whiskey'
     },
     {
@@ -22,13 +22,13 @@ Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
       'subcategoryName': 'Vodka'
     },
     {
-      'subcategoryImage': const AssetImage(
-          'assets/Drink Category Photos/Spirits/Brandy Page.jpeg'),
+      'subcategoryImage':
+          const AssetImage('assets/Drink Category Photos/Spirits/Brandy.png'),
       'subcategoryName': 'Brandy'
     },
     {
-      'subcategoryImage': const AssetImage(
-          'assets/Drink Category Photos/Spirits/Gin Page.jpeg'),
+      'subcategoryImage':
+          const AssetImage('assets/Drink Category Photos/Spirits/Gin.png'),
       'subcategoryName': 'Gin'
     },
     {

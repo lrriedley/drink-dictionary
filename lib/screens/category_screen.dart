@@ -11,7 +11,7 @@ class CategoryScreen extends StatelessWidget {
   final String category;
   // final List<String> subcategories;
 
-  CategoryScreen({required this.category});
+  const CategoryScreen({super.key, required this.category});
   @override
   Widget build(BuildContext context) {
     const Color color1 = Color(0xFF16191B);
@@ -52,7 +52,7 @@ class CategoryScreen extends StatelessWidget {
                                 image: subcategory['subcategoryImage']
                                     as AssetImage,
                               );
-                            })?.toList() ??
+                            }).toList() ??
                             [],
                   ),
                 ),

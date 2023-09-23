@@ -1,3 +1,4 @@
+import 'package:drink_dictionary/Components/new_drink_card.dart';
 import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,26 +55,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       CategoryButton(
                           categoryName: 'Spirits',
-                          image: AssetImage(
+                          image: const AssetImage(
                               'assets/Drink Category Photos/Spirits/Spirits.png')),
                       CategoryButton(
                         categoryName: 'Cocktails',
-                        image: AssetImage(
+                        image: const AssetImage(
                             'assets/Drink Category Photos/Cocktails/Cocktails.png'),
                       ),
                       CategoryButton(
                         categoryName: 'Beer',
-                        image: AssetImage(
+                        image: const AssetImage(
                             'assets/Drink Category Photos/Beer/Beer.png'),
                       ),
                       CategoryButton(
                         categoryName: 'Wine',
-                        image: AssetImage(
+                        image: const AssetImage(
                             'assets/Drink Category Photos/Wine/Wine.png'),
                       ),
                       CategoryButton(
                         categoryName: 'Seltzer',
-                        image: AssetImage(
+                        image: const AssetImage(
                             'assets/Drink Category Photos/Seltzer/Seltzer.png'),
                       ),
                       // CategoryButton(categoryName: 'Mixers'),
