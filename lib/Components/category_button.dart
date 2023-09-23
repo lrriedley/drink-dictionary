@@ -1,5 +1,4 @@
-import 'package:drink_dictionary/screens/spirits_screen.dart';
-import 'package:drink_dictionary/screens/whiskey_screen.dart';
+import 'package:drink_dictionary/screens/category_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,27 +14,27 @@ class CategoryButton extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => SpiritsScreen(),
+            builder: (context) => CategoryScreen(category: categoryName),
           ),
         );
       },
       child: Container(
-        width: 116.25,
-        height: 61.5,
+        width: 145,
+        height: 77,
         margin: const EdgeInsets.fromLTRB(8, 8, 3, 8),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: image,
             fit: BoxFit.cover,
           ),
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 3),
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(

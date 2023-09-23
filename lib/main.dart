@@ -1,5 +1,4 @@
-import 'package:drink_dictionary/screens/spirits_screen.dart';
-import 'package:drink_dictionary/screens/whiskey_screen.dart';
+import 'package:drink_dictionary/screens/category_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
@@ -15,8 +14,16 @@ class MainApp extends StatelessWidget {
       initialRoute: HomeScreen.id,
       routes: {
         HomeScreen.id: (context) => const HomeScreen(),
-        SpiritsScreen.id: (context) => SpiritsScreen(),
-        WhiskeyScreen.id: (context) => const WhiskeyScreen()
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == CategoryScreen.id) {
+          final String category = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (context) => CategoryScreen(category: category),
+          );
+        }
+        // handle other dynamic routes or return null if route not found
+        return null;
       },
     );
   }

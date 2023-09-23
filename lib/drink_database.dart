@@ -1,7 +1,90 @@
 import 'package:flutter/material.dart';
 
-Map<String, List<String>> categories = {
-  'Spirits': ['Whiskey', 'Tequila', 'Vodka', 'Brandy', 'Gin', 'Rum', 'Liqueur']
+Map<String, List<String>> category = {
+  'categoryName': ['Spirits', 'Cocktails', 'Beer', 'Wine', 'Seltzers']
+};
+
+Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
+  'Spirits': [
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Whiskey Page.jpeg'),
+      'subcategoryName': 'Whiskey'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Tequila Page.png'),
+      'subcategoryName': 'Tequila'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Vodka Page.jpeg'),
+      'subcategoryName': 'Vodka'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Brandy Page.jpeg'),
+      'subcategoryName': 'Brandy'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Gin Page.jpeg'),
+      'subcategoryName': 'Gin'
+    },
+    {
+      'subcategoryImage':
+          const AssetImage('assets/Drink Category Photos/Spirits/Rum Page.png'),
+      'subcategoryName': 'Rum'
+    },
+    {
+      'subcategoryImage':
+          const AssetImage('assets/Drink Category Photos/Spirits/Liqueur.jpg'),
+      'subcategoryName': 'Liqueur'
+    },
+  ],
+  'Cocktails': [
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Whiskey Cocktails.png'),
+      'subcategoryName': 'Whiskey'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Brandy Cocktails.png'),
+      'subcategoryName': 'Brandy'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Tequila Cocktails.png'),
+      'subcategoryName': 'Tequila'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Vodka Cocktails.png'),
+      'subcategoryName': 'Vodka'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Gin Cocktails.png'),
+      'subcategoryName': 'Gin'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Rum Cocktails.png'),
+      'subcategoryName': 'Rum'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Liqueur Cocktails.png'),
+      'subcategoryName': 'Liqueur'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Wine Cocktails.png'),
+      'subcategoryName': 'Wine'
+    },
+  ],
+  // ... (other categories)
 };
 
 List<Map<String, dynamic>> drinks = [
