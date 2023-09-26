@@ -33,12 +33,12 @@ Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
     },
     {
       'subcategoryImage':
-          const AssetImage('assets/Drink Category Photos/Spirits/Rum Page.png'),
+          const AssetImage('assets/Drink Category Photos/Spirits/Rum.png'),
       'subcategoryName': 'Rum'
     },
     {
       'subcategoryImage':
-          const AssetImage('assets/Drink Category Photos/Spirits/Liqueur.jpg'),
+          const AssetImage('assets/Drink Category Photos/Spirits/Liqueur.png'),
       'subcategoryName': 'Liqueur'
     },
   ],
@@ -82,6 +82,44 @@ Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
       'subcategoryImage': const AssetImage(
           'assets/Drink Category Photos/Cocktails/Wine Cocktails.png'),
       'subcategoryName': 'Wine'
+    },],
+    'Beer': [
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Beer/Lager.png'),
+      'subcategoryName': 'Lager'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Beer/Ale.png'),
+      'subcategoryName': 'Ale'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Beer/Cider.png'),
+      'subcategoryName': 'Cider'
+    },
+  ],
+    'Wine': [
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/RedWine.png'),
+      'subcategoryName': 'Red Wine'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/WhiteWine.png'),
+      'subcategoryName': 'White Wine'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/SparklingWine.png'),
+      'subcategoryName': 'Sparkling Wine'
+    },
+    {
+      'subcategoryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/Rose.png'),
+      'subcategoryName': 'Rose'
     },
   ],
   // ... (other categories)
