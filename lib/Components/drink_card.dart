@@ -1,3 +1,4 @@
+import 'package:drink_dictionary/screens/drink_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,34 +13,38 @@ class DrinkCard extends StatelessWidget {
     required this.drinkName,
     required this.drinkDescription,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    const Color color1 = Color(0xFF16191B);
-    const Color color2 = Color(0xFF283337);
-    const Color color3 = Color(0xFF16191B);
-    return Column(
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: const EdgeInsets.all(5),
-              height: 106,
-              width: 97,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: Image(
-                image: drinkImage,
-                width: 10,
-                height: 10,
-                alignment: Alignment.topCenter,
-              ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => DrinkScreen(
+                drinkImage: drinkImage,
+                drinkName: drinkName,
+                drinkDescription: drinkDescription),
+          ),
+        );
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: const EdgeInsets.all(5),
+            height: 106,
+            width: 97,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20.0),
             ),
-            Text(
-              drinkName,
+            child: Image(
+              image: drinkImage,
+              width: 10,
+              height: 10,
+              alignment: Alignment.topCenter,
+            ),
+          ),
+          Text(drinkName,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   color: Colors.white,
@@ -47,11 +52,9 @@ class DrinkCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              textAlign: TextAlign.left,
-            ),
-          ],
-        ),
-      ],
+              textAlign: TextAlign.end),
+        ],
+      ),
     );
   }
 }

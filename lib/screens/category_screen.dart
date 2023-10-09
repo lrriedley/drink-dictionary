@@ -9,14 +9,10 @@ import 'package:drink_dictionary/components/drink_card.dart';
 class CategoryScreen extends StatelessWidget {
   static const String id = 'category_screen';
   final String category;
-  // final List<String> subcategories;
 
   const CategoryScreen({super.key, required this.category});
   @override
   Widget build(BuildContext context) {
-    const Color color1 = Color(0xFF16191B);
-    const Color color2 = Color(0xFF283337);
-    const Color color3 = Color(0xFF16191B);
     return MaterialApp(
       home: DefaultTabController(
         length: 3,
@@ -70,7 +66,8 @@ class CategoryScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      for (var drink in drinks)
+                      for (var drink in drinkData['Spirits']['Whiskey']
+                          ['Bourbon'])
                         DrinkCard(
                           drinkImage: drink['drinkImage'],
                           drinkName: drink['drinkName'],
@@ -89,41 +86,22 @@ class CategoryScreen extends StatelessWidget {
                         fontSize: 20),
                   ),
                 ),
-                Column(
-                  children: [
-                    for (var i = 0; i < spirits.length; i += 4)
-                      Row(
-                        children: [
-                          if (i < spirits.length)
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      for (var spirit in drinkData['Spirits'].keys)
+                        for (var subcategory
+                            in drinkData['Spirits'][spirit].keys)
+                          for (var drink in drinkData['Spirits'][spirit]
+                              [subcategory])
                             DrinkCard(
-                              drinkImage: spirits[i]['drinkImage'],
-                              drinkName: spirits[i]['drinkName'],
-                              drinkDescription: spirits[i]['drinkDescription'],
+                              drinkImage: drink['drinkImage'],
+                              drinkName: drink['drinkName'],
+                              drinkDescription: drink['drinkDescription'],
                             ),
-                          if (i + 1 < spirits.length)
-                            DrinkCard(
-                              drinkImage: spirits[i + 1]['drinkImage'],
-                              drinkName: spirits[i + 1]['drinkName'],
-                              drinkDescription: spirits[i + 1]
-                                  ['drinkDescription'],
-                            ),
-                          if (i + 2 < spirits.length)
-                            DrinkCard(
-                              drinkImage: spirits[i + 2]['drinkImage'],
-                              drinkName: spirits[i + 2]['drinkName'],
-                              drinkDescription: spirits[i + 2]
-                                  ['drinkDescription'],
-                            ),
-                          if (i + 3 < spirits.length)
-                            DrinkCard(
-                              drinkImage: spirits[i + 3]['drinkImage'],
-                              drinkName: spirits[i + 3]['drinkName'],
-                              drinkDescription: spirits[i + 3]
-                                  ['drinkDescription'],
-                            ),
-                        ],
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

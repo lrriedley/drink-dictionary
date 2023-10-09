@@ -1,4 +1,3 @@
-import 'package:drink_dictionary/Components/new_drink_card.dart';
 import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 
   const HomeScreen({super.key});
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -23,9 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const Color color1 = Color(0xFF16191B);
-    const Color color2 = Color(0xFF283337);
-    const Color color3 = Color(0xFF16191B);
     return MaterialApp(
       home: DefaultTabController(
         length: 3,
@@ -34,12 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             backgroundColor: Colors.black.withOpacity(0.7),
             title: Text(
-              'DRINK DICTIONARY',
+              'Drink Dictionary',
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   color: Colors.white,
                   fontSize: 32, // text size
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
@@ -49,32 +46,32 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 NightSearchBar(searchText: 'Search for your favorite cocktail'),
-                SingleChildScrollView(
+                const SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       CategoryButton(
                           categoryName: 'Spirits',
-                          image: const AssetImage(
+                          image: AssetImage(
                               'assets/Drink Category Photos/Spirits/Spirits.png')),
                       CategoryButton(
                         categoryName: 'Cocktails',
-                        image: const AssetImage(
+                        image: AssetImage(
                             'assets/Drink Category Photos/Cocktails/Cocktails.png'),
                       ),
                       CategoryButton(
                         categoryName: 'Beer',
-                        image: const AssetImage(
+                        image: AssetImage(
                             'assets/Drink Category Photos/Beer/Beer.png'),
                       ),
                       CategoryButton(
                         categoryName: 'Wine',
-                        image: const AssetImage(
+                        image: AssetImage(
                             'assets/Drink Category Photos/Wine/Wine.png'),
                       ),
                       CategoryButton(
                         categoryName: 'Seltzer',
-                        image: const AssetImage(
+                        image: AssetImage(
                             'assets/Drink Category Photos/Seltzer/Seltzer.png'),
                       ),
                       // CategoryButton(categoryName: 'Mixers'),
@@ -96,36 +93,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      for (var drink in drinks)
+                      for (var drink in drinkData['Spirits']['Whiskey']
+                          ['Bourbon'])
                         DrinkCard(
                           drinkImage: drink['drinkImage'],
                           drinkName: drink['drinkName'],
                           drinkDescription: drink['drinkDescription'],
                         ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
-                  child: Text(
-                    'Bourbon',
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      for (var bourbonDrink in spirits)
-                        if (bourbonDrink['SubcategoryName'] == 'Bourbon')
-                          DrinkCard(
-                            drinkImage: bourbonDrink['drinkImage'],
-                            drinkName: bourbonDrink['drinkName'],
-                            drinkDescription: bourbonDrink['drinkDescription'],
-                          ),
                     ],
                   ),
                 ),
