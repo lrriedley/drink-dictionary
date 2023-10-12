@@ -32,4 +32,10 @@ flutter:
     - assets/Drink Category Photos/Seltzer/
     - assets/Tequila/Blanco/
     - assets/Brandy/Cognac/
+    - assets/Cocktails/Brandy/
+    - assets/Cocktails/Gin/
+    - assets/Cocktails/Rum/
+    - assets/Cocktails/Tequila/
+    - assets/Cocktails/Wine/
+    
     

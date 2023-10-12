@@ -103,6 +103,30 @@ class CategoryScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
+                  child: Text(
+                    'Cocktails',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20),
+                  ),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      for (var drinkType in drinkData['Cocktails'].keys)
+                        for (var drink in drinkData['Cocktails'][drinkType])
+                          DrinkCard(
+                            drinkImage: drink['drinkImage'],
+                            drinkName: drink['drinkName'],
+                            drinkDescription: drink['drinkDescription'],
+                          ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

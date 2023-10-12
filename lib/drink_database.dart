@@ -252,16 +252,142 @@ Map<String, dynamic> drinkData = {
     // ... Continue for other spirits like Vodka, Gin, etc.
   },
   'Cocktails': {
-    'Whiskey': {},
-    'Brandy': {},
-    'Vodka': {
+    // 'Whiskey': {},
+    'Brandy': [
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Brandy/Sazerac.png'),
+        'drinkName': 'Sazerac',
+        'drinkDescription': 'Tito\'s Vodka, Soda, Lime',
+        'drinkInstructions': 'Fill cup with ice, Add vodka, Top with soda'
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Brandy/Sidecar.png'),
+        'drinkName': 'Sidecar',
+        'drinkDescription': 'Tito\'s Vodka, Soda, Lime',
+        'drinkInstructions': 'Fill cup with ice, Add vodka, Top with soda'
+      },
+    ],
+    'Gin': [
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Gin/French 75.png'),
+        'drinkName': 'French 75',
+        'drinkDescription': 'Tito\'s Vodka, Soda, Lime',
+        'drinkInstructions': 'Fill cup with ice, Add vodka, Top with soda'
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Gin/Gimlet.png'),
+        'drinkName': 'Gimlet',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Gin/Negroni.png'),
+        'drinkName': 'Negroni',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+    ],
+    'Rum': [
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Rum/Bahama Mama.png'),
+        'drinkName': 'Bahama Mama',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Rum/Daiquiri.png'),
+        'drinkName': 'Daiquiri',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Rum/Dark n\' Stormy.png'),
+        'drinkName': 'Dark n\' Stormy',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Rum/Mai Tai.png'),
+        'drinkName': 'Mai Tai',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Rum/Mojito.png'),
+        'drinkName': 'Mojito',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Rum/Painkiller.png'),
+        'drinkName': 'Painkiller',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Rum/Pina Colada.png'),
+        'drinkName': 'Pina Colada',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+    ],
+    'Tequila': [
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Tequila/Margarita.png'),
+        'drinkName': 'Margarita',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Tequila/Paloma.png'),
+        'drinkName': 'Paloma',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage':
+            const AssetImage('assets/Cocktails/Tequila/Tequila Sunrise.png'),
+        'drinkName': 'Tequila Sunrise',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+    ],
+    'Vodka': [
       {
         'drinkImage': const AssetImage('assets/Untitled design.png'),
         'drinkName': 'Tito\'s and Soda',
         'drinkDescription': 'Tito\'s Vodka, Soda, Lime',
         'drinkInstructions': 'Fill cup with ice, Add vodka, Top with soda'
       },
-    },
-  }
+    ],
+    'Wine': [
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Wine/Americano.png'),
+        'drinkName': 'Americano',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Wine/Bellini.png'),
+        'drinkName': 'Bellini',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+      {
+        'drinkImage': const AssetImage('assets/Cocktails/Wine/Mimosa.png'),
+        'drinkName': 'Mimosa',
+        'drinkDescription': '',
+        'drinkInstructions': ''
+      },
+    ]
+  },
   // ... Continue with other categories like Cocktails, Beer, etc.
 };
+
+
+      // {
+      //   'drinkImage': AssetImage(''),
+      //   'drinkName': '',
+      //   'drinkDescription': '',
+      //   'drinkInstructions': ''
+      // },
