@@ -21,6 +21,15 @@ flutter:
   assets:
     - assets/Untitled design (5).png
     - assets/Untitled design.png
+    - assets/Beer/Ale/Bottle/
+    - assets/Beer/Ale/Can/
+    - assets/Beer/Ale/Draft/
+    - assets/Beer/Cider/Bottle/
+    - assets/Beer/Cider/Can/
+    - assets/Beer/Cider/Draft/
+    - assets/Beer/Lager/Bottle/
+    - assets/Beer/Lager/Can/
+    - assets/Beer/Lager/Draft/
     - assets/Spirits/
     - assets/Spirits/Whiskey/Bourbon/
     - assets/Spirits/Whiskey/Canadian Whiskey/

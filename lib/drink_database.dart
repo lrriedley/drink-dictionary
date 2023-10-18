@@ -149,6 +149,13 @@ Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
   // ... (other categories)
 };
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
 Map<String, dynamic> drinkData = {
   'Spirits': {
     'Whiskey': {
@@ -407,6 +414,117 @@ Map<String, dynamic> drinkData = {
       },
     ]
   },
+  'Beer': {
+    'Lager': {
+      'Draft': [
+        {},
+      ],
+      'Bottle': [
+        {
+          'drinkName': 'Bud Light',
+          'drinkImage':
+              const AssetImage('assets/Beer/Lager/Bottle/Bud Light.png'),
+        },
+        {
+          'drinkName': 'Budweiser',
+          'drinkImage':
+              const AssetImage('assets/Beer/Lager/Bottle/Budweiser.png'),
+        },
+        {
+          'drinkName': 'Coors Light',
+          'drinkImage':
+              const AssetImage('assets/Beer/Lager/Bottle/Coors Light.png'),
+        },
+        {
+          'drinkName': 'Dos Equis',
+          'drinkImage':
+              const AssetImage('assets/Beer/Lager/Bottle/Dos Equis.png'),
+        },
+        {
+          'drinkName': 'Heineken',
+          'drinkImage':
+              const AssetImage('assets/Beer/Lager/Bottle/Heineken.png'),
+        },
+        {
+          'drinkName': 'Corona',
+          'drinkImage': const AssetImage('assets/Beer/Lager/Bottle/Corona.png'),
+        },
+        {
+          'drinkName': 'Stella Artois',
+          'drinkImage':
+              const AssetImage('assets/Beer/Lager/Bottle/Stella Artois.png'),
+        },
+        {
+          'drinkName': 'Michelob Ultra',
+          'drinkImage':
+              const AssetImage('assets/Beer/Lager/Bottle/Michelob Ultra.png'),
+        },
+        {
+          'drinkName': 'Modelo',
+          'drinkImage': const AssetImage('assets/Beer/Lager/Bottle/Modelo.png'),
+        },
+        {
+          'drinkName': 'Pabst Blue Ribbon',
+          'drinkImage': const AssetImage(
+              'assets/Beer/Lager/Bottle/Pabst Blue Ribbon.png'),
+        }
+      ],
+      'Can': [
+        {
+          'drinkName': 'Bud Light',
+          'drinkImage': const AssetImage('assets/Beer/Lager/Can/Bud Light.png'),
+        },
+        {
+          'drinkName': 'Pabst Blue Ribbon',
+          'drinkImage':
+              const AssetImage('assets/Beer/Lager/Can/Pabst Blue Ribbon.png'),
+        }
+      ],
+      'Ale': {
+        'Draft': [
+          {},
+        ],
+        'Bottle': [
+          {
+            'drinkName': 'Blue Moon',
+            'drinkImage':
+                const AssetImage('assets/Beer/Ale/Bottle/Blue Moon.png'),
+          },
+          {
+            'drinkName': 'Guinness',
+            'drinkImage':
+                const AssetImage('assets/Beer/Ale/Bottle/Guinness.png'),
+          },
+          {
+            'drinkName': 'Fat Tire',
+            'drinkImage':
+                const AssetImage('assets/Beer/Ale/Bottle/Fat Tire.png'),
+          },
+          {
+            'drinkName': 'Kona Big Wave',
+            'drinkImage':
+                const AssetImage('assets/Beer/Ale/Bottle/Kona Big Wave.png'),
+          },
+          {
+            'drinkName': 'Sierra Nevada Pale Ale',
+            'drinkImage': const AssetImage(
+                'assets/Beer/Ale/Bottle/Sierra Nevada Pale Ale.png'),
+          },
+        ],
+        'Can': [
+          {
+            'drinkName': 'Guinness',
+            'drinkImage': const AssetImage('assets/Beer/Ale/Can/Guinness.png'),
+          },
+        ]
+      },
+      'Cider': {
+        'Draft': [{}],
+        'Bottle': [{}],
+        'Can': [{}],
+      }
+    }
+  }
   // ... Continue with other categories like Cocktails, Beer, etc.
 };
 
