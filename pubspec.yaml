@@ -21,17 +21,32 @@ flutter:
   assets:
     - assets/Untitled design (5).png
     - assets/Untitled design.png
-    - assets/Drink Category Photos/Spirits/Whiskey.png
-    - assets/Whiskey/Bourbon/Buffalo Trace.png
-    - assets/Whiskey/Bourbon/
-    - assets/Whiskey/Irish Whiskey/
+    - assets/Spirits/
+    - assets/Spirits/Whiskey/Bourbon/
+    - assets/Spirits/Whiskey/Canadian Whiskey/
+    - assets/Spirits/Whiskey/Irish Whiskey/
+    - assets/Spirits/Whiskey/Scotch/
+    - assets/Spirits/Whiskey/Rye Whiskey/
+    - assets/Spirits/Whiskey/Tennessee Whiskey/
+    - assets/Spirits/Brandy/
+    - assets/Spirits/Brandy/Cognac/
+    - assets/Spirits/Gin/
+    - assets/Spirits/Rum/Dark/
+    - assets/Spirits/Rum/Light/
+    - assets/Spirits/Tequila/Anejo/
+    - assets/Spirits/Tequila/Blanco/
+    - assets/Spirits/Tequila/Reposado/
+    - assets/Spirits/Tequila/Gold/
+    - assets/Spirits/Tequila/Mezcal/
+    - assets/Spirits/Liqueurs/
+    - assets/Spirits/Vodka/
     - assets/Drink Category Photos/Spirits/
     - assets/Drink Category Photos/Cocktails/
     - assets/Drink Category Photos/Beer/
     - assets/Drink Category Photos/Wine/
     - assets/Drink Category Photos/Seltzer/
-    - assets/Tequila/Blanco/
-    - assets/Brandy/Cognac/
+    - assets/Drink Category Photos/Mixers/
+    - assets/Drink Category Photos/Other/
     - assets/Cocktails/Brandy/
     - assets/Cocktails/Gin/
     - assets/Cocktails/Rum/

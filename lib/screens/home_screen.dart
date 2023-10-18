@@ -46,37 +46,16 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 NightSearchBar(searchText: 'Search for your favorite cocktail'),
-                const SingleChildScrollView(
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
-                      CategoryButton(
-                          categoryName: 'Spirits',
-                          image: AssetImage(
-                              'assets/Drink Category Photos/Spirits/Spirits.png')),
-                      CategoryButton(
-                        categoryName: 'Cocktails',
-                        image: AssetImage(
-                            'assets/Drink Category Photos/Cocktails/Cocktails.png'),
-                      ),
-                      CategoryButton(
-                        categoryName: 'Beer',
-                        image: AssetImage(
-                            'assets/Drink Category Photos/Beer/Beer.png'),
-                      ),
-                      CategoryButton(
-                        categoryName: 'Wine',
-                        image: AssetImage(
-                            'assets/Drink Category Photos/Wine/Wine.png'),
-                      ),
-                      CategoryButton(
-                        categoryName: 'Seltzer',
-                        image: AssetImage(
-                            'assets/Drink Category Photos/Seltzer/Seltzer.png'),
-                      ),
-                      // CategoryButton(categoryName: 'Mixers'),
-                      // CategoryButton(categoryName: 'Other')
-                    ],
+                    children: category.keys.map((categoryName) {
+                      final categoryData = category[categoryName]![0];
+                      return CategoryButton(
+                        categoryName: categoryName,
+                        image: categoryData['categoryImage'] as AssetImage,
+                      );
+                    }).toList(),
                   ),
                 ),
                 Padding(

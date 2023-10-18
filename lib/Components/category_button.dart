@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoryButton extends StatelessWidget {
-  const CategoryButton({super.key, required this.categoryName, required this.image});
+  const CategoryButton(
+      {super.key, required this.categoryName, required this.image});
 
   final String categoryName;
   final AssetImage image;

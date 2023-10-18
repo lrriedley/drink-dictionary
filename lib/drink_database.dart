@@ -1,7 +1,30 @@
 import 'package:flutter/material.dart';
 
-Map<String, List<String>> category = {
-  'categoryName': ['Spirits', 'Cocktails', 'Beer', 'Wine', 'Seltzers']
+Map<String, List<Map<String, dynamic>>> category = {
+  'Spirits': [
+    {
+      'categoryImage':
+          AssetImage('assets/Drink Category Photos/Spirits/Spirits.png')
+    }
+  ],
+  'Cocktails': [
+    {
+      'categoryImage':
+          AssetImage('assets/Drink Category Photos/Cocktails/Cocktails.png')
+    }
+  ],
+  'Beer': [
+    {'categoryImage': AssetImage('assets/Drink Category Photos/Beer/Beer.png')}
+  ],
+  'Wine': [
+    {'categoryImage': AssetImage('assets/Drink Category Photos/Wine/Wine.png')}
+  ],
+  'Seltzers': [
+    {
+      'categoryImage':
+          AssetImage('assets/Drink Category Photos/Seltzer/Seltzers.png')
+    }
+  ],
 };
 
 Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
@@ -12,8 +35,8 @@ Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
       'subcategoryName': 'Whiskey'
     },
     {
-      'subcategoryImage': const AssetImage(
-          'assets/Drink Category Photos/Spirits/Tequila Page.png'),
+      'subcategoryImage':
+          const AssetImage('assets/Drink Category Photos/Spirits/Tequila.png'),
       'subcategoryName': 'Tequila'
     },
     {
@@ -131,8 +154,8 @@ Map<String, dynamic> drinkData = {
     'Whiskey': {
       'Bourbon': [
         {
-          'drinkImage':
-              const AssetImage('assets/Whiskey/Bourbon/Bulleit Bourbon.png'),
+          'drinkImage': const AssetImage(
+              'assets/Spirits/Whiskey/Bourbon/Bulleit Bourbon.png'),
           'drinkName': 'Bulleit Bourbon',
           'drinkDescription':
               'Bourbon with a bold, spicy character with a finish that\'s clean and smooth.',
@@ -141,7 +164,7 @@ Map<String, dynamic> drinkData = {
         },
         {
           'drinkImage':
-              const AssetImage('assets/Whiskey/Bourbon/Blanton\'s.png'),
+              const AssetImage('assets/Spirits/Whiskey/Bourbon/Blanton\'s.png'),
           'drinkName': 'Blanton\'s',
           'drinkDescription':
               'A sweet, well-balanced single barrel bourbon with notes of citrus and oak.',
@@ -149,8 +172,8 @@ Map<String, dynamic> drinkData = {
           'tastingNotes': 'Vanilla undertones, earthy, touch of spice',
         },
         {
-          'drinkImage':
-              const AssetImage('assets/Whiskey/Bourbon/Buffalo Trace.png'),
+          'drinkImage': const AssetImage(
+              'assets/Spirits/Whiskey/Bourbon/Buffalo Trace.png'),
           'drinkName': 'Buffalo Trace',
           'drinkDescription':
               'A historic bourbon known for its rich and complex flavor profile. Buffalo Trace offers a delightful combination of caramel, toffee, and a touch of fruitiness.',
@@ -158,15 +181,16 @@ Map<String, dynamic> drinkData = {
           'tastingNotes': 'Vanilla undertones, earthy, touch of spice',
         },
         {
-          'drinkImage':
-              const AssetImage('assets/Whiskey/Bourbon/Woodford Reserve.png'),
+          'drinkImage': const AssetImage(
+              'assets/Spirits/Whiskey/Bourbon/Woodford Reserve.png'),
           'drinkName': 'Woodford Reserve',
           'drinkDescription': 'A classic, well-balanced bourbon.',
           'SubcategoryName': 'Bourbon',
           'tastingNotes': 'Vanilla undertones, earthy, touch of spice',
         },
         {
-          'drinkImage': const AssetImage('assets/Whiskey/Bourbon/Jim Beam.png'),
+          'drinkImage':
+              const AssetImage('assets/Spirits/Whiskey/Bourbon/Jim Beam.png'),
           'drinkName': 'Jim Beam',
           'drinkDescription':
               'Classic American whiskey known for its smooth and mellow flavor with hints of caramel and vanilla.',
@@ -175,7 +199,7 @@ Map<String, dynamic> drinkData = {
         },
         {
           'drinkImage':
-              const AssetImage('assets/Whiskey/Bourbon/Knob Creek.png'),
+              const AssetImage('assets/Spirits/Whiskey/Bourbon/Knob Creek.png'),
           'drinkName': 'Knob Creek',
           'drinkDescription':
               'A full-bodied bourbon whiskey known for its rich, sweet, and robust flavor profile, featuring notes of caramel, toasted oak, and a long, warming finish. It\'s aged for a minimum of nine years, resulting in a deep and complex bourbon experience.',
@@ -183,8 +207,8 @@ Map<String, dynamic> drinkData = {
           'tastingNotes': 'Vanilla undertones, earthy, touch of spice',
         },
         {
-          'drinkImage':
-              const AssetImage('assets/Whiskey/Bourbon/Old Forester.png'),
+          'drinkImage': const AssetImage(
+              'assets/Spirits/Whiskey/Bourbon/Old Forester.png'),
           'drinkName': 'Old Forester',
           'drinkDescription':
               'A historic bourbon brand renowned for its smooth and balanced flavor profile, marked by notes of caramel, vanilla, and a hint of spice, making it a classic choice for bourbon enthusiasts.',
@@ -195,7 +219,7 @@ Map<String, dynamic> drinkData = {
       'Irish Whiskey': [
         {
           'drinkImage': const AssetImage(
-              'assets/Whiskey/Irish Whiskey/Proper Twelve.png'),
+              'assets/Spirits/Whiskey/Irish Whiskey/Proper Twelve.png'),
           'drinkName': 'Proper Twelve',
           'drinkDescription': '',
           'SubcategoryName': 'Irish Whiskey',
@@ -203,7 +227,7 @@ Map<String, dynamic> drinkData = {
         },
         {
           'drinkImage': const AssetImage(
-              'assets/Whiskey/Irish Whiskey/Tullamore D.E.W..png'),
+              'assets/Spirits/Whiskey/Irish Whiskey/Tullamore D.E.W..png'),
           'drinkName': 'Tullamore D.E.W.',
           'drinkDescription': '',
           'SubcategoryName': 'Irish Whiskey',
@@ -215,7 +239,7 @@ Map<String, dynamic> drinkData = {
       'Cognac': [
         {
           'drinkImage':
-              const AssetImage('assets/Brandy/Cognac/Hennessy XO.png'),
+              const AssetImage('assets/Spirits/Brandy/Cognac/Hennessy XO.png'),
           'drinkName': 'Hennessy XO',
           'drinkDescription': 'Elegant French Cognac',
           'tastingNotes': 'Woody aroma, hints of citrus, velvety texture',
@@ -226,22 +250,22 @@ Map<String, dynamic> drinkData = {
     'Tequila': {
       'Blanco': [
         {
-          'drinkImage':
-              const AssetImage('assets/Tequila/Blanco/Casamigos Blanco.png'),
+          'drinkImage': const AssetImage(
+              'assets/Spirits/Tequila/Blanco/Casamigos Blanco.png'),
           'drinkName': 'Casamigos Blanco',
           'drinkDescription': 'Pure Agave Experience',
           'tastingNotes': 'Crisp, slightly peppery, clean finish',
         },
         {
-          'drinkImage':
-              const AssetImage('assets/Tequila/Blanco/Jose Cuervo Blanco.png'),
+          'drinkImage': const AssetImage(
+              'assets/Spirits/Tequila/Blanco/Jose Cuervo Blanco.png'),
           'drinkName': 'Jose Cuervo Blanco',
           'drinkDescription': 'Pure Agave Experience',
           'tastingNotes': 'Crisp, slightly peppery, clean finish',
         },
         {
-          'drinkImage':
-              const AssetImage('assets/Tequila/Blanco/Patron Blanco.png'),
+          'drinkImage': const AssetImage(
+              'assets/Spirits/Tequila/Blanco/Patron Blanco.png'),
           'drinkName': 'Patron Blanco',
           'drinkDescription': 'Pure Agave Experience',
           'tastingNotes': 'Crisp, slightly peppery, clean finish',
@@ -301,7 +325,8 @@ Map<String, dynamic> drinkData = {
         'drinkInstructions': ''
       },
       {
-        'drinkImage': const AssetImage('assets/Cocktails/Rum/Dark n\' Stormy.png'),
+        'drinkImage':
+            const AssetImage('assets/Cocktails/Rum/Dark n\' Stormy.png'),
         'drinkName': 'Dark n\' Stormy',
         'drinkDescription': '',
         'drinkInstructions': ''
@@ -333,7 +358,8 @@ Map<String, dynamic> drinkData = {
     ],
     'Tequila': [
       {
-        'drinkImage': const AssetImage('assets/Cocktails/Tequila/Margarita.png'),
+        'drinkImage':
+            const AssetImage('assets/Cocktails/Tequila/Margarita.png'),
         'drinkName': 'Margarita',
         'drinkDescription': '',
         'drinkInstructions': ''
