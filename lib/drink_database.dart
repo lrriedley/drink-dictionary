@@ -522,8 +522,11 @@ Map<String, dynamic> drinkData = {
         'Draft': [{}],
         'Bottle': [{}],
         'Can': [{}],
-      }
-    }
+      },
+    },
+  },
+  'Wine': {
+
   }
   // ... Continue with other categories like Cocktails, Beer, etc.
 };
