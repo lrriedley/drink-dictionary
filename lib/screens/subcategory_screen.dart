@@ -1,9 +1,9 @@
+import 'package:drink_dictionary/Components/tertiary_button.dart';
 import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
-import 'package:drink_dictionary/components/subcategory_button.dart';
 import 'package:drink_dictionary/components/drink_card.dart';
 import 'package:drink_dictionary/Components/flatten_drinks.dart';
 
@@ -42,39 +42,21 @@ class SubcategoryScreen extends StatelessWidget {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children:
-                        categoryToSubcategories[category]?.map((subcategory) {
-                              return SubcategoryButton(
-                                subcategoryName: subcategory['subcategoryName'],
-                                image: subcategory['subcategoryImage']
-                                    as AssetImage,
-                              );
-                            }).toList() ??
-                            [],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
-                  child: Text(
-                    'Trending',
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      for (var drink in drinkData['Spirits']['Whiskey']
-                          ['Bourbon'])
-                        DrinkCard(
-                          drinkImage: drink['drinkImage'],
-                          drinkName: drink['drinkName'],
-                          drinkDescription: drink['drinkDescription'],
-                        ),
-                    ],
+                    children: subcategoryToTertiary[subcategory]
+                            ?.map((tertiary) {
+                          if (tertiary != null) {
+                            // Add this null check
+                            return TertiaryButton(
+                              tertiaryName: tertiary['tertiaryName'] ?? '',
+                              image: tertiary['tertiaryImage'] as AssetImage? ??
+                                  AssetImage(
+                                      'path_to_placeholder_image'), // Provide a placeholder image path or handle null case
+                            );
+                          }
+                          return SizedBox
+                              .shrink(); // Return an empty SizedBox if tertiary is null
+                        }).toList() ??
+                        [],
                   ),
                 ),
                 Padding(
@@ -87,43 +69,36 @@ class SubcategoryScreen extends StatelessWidget {
                         fontSize: 20),
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    height: 400, // Adjust the height as needed
-                    child: ListView.builder(
-                      scrollDirection:
-                          Axis.horizontal, // Horizontal scrolling for rows
-                      itemCount: drinkData[subcategory],
-                      itemBuilder: (BuildContext context, int index) {
-                        return DrinkCard(
-                          drinkImage: drinkData[subcategory][index]
-                              ['drinkImage'],
-                          drinkName: drinkData[subcategory][index]['drinkName'],
-                          drinkDescription: drinkData[subcategory][index]
-                                  ['drinkDescription'] ??
-                              '',
-                        );
-                      },
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 400, // Adjust the height as needed
-                  child: ListView.builder(
-                    scrollDirection:
-                        Axis.vertical, // Vertical scrolling for rows
-                    itemCount: drinkData[subcategory],
-                    itemBuilder: (BuildContext context, int index) {
-                      final drink = drinkData[subcategory][index];
+                // Container(
+                //   height: 400,
+                //   child: ListView.builder(
+                //     scrollDirection: Axis.vertical,
+                //     itemCount:
+                //         (flattenDrinks(drinkData[subcategory]).length / 4)
+                //             .ceil(),
+                //     itemBuilder: (BuildContext context, int index) {
+                //       final categoryDrinks = flattenDrinks(drinkData[category]);
+                //       final start = index * 4;
+                //       final end = (index + 1) * 4;
 
-                      return DrinkCard(
-                        drinkImage: drink['drinkImage'],
-                        drinkName: drink['drinkName'],
-                        drinkDescription: drink['drinkDescription'],
-                      );
-                    },
-                  ),
-                )
+                //       return Row(
+                //         children: [
+                //           for (var i = start; i < end; i++)
+                //             if (i < categoryDrinks.length)
+                //               Expanded(
+                //                 child: DrinkCard(
+                //                   drinkImage: categoryDrinks[i]['drinkImage'],
+                //                   drinkName: categoryDrinks[i]['drinkName'],
+                //                   drinkDescription: categoryDrinks[i]
+                //                           ['drinkDescription'] ??
+                //                       '',
+                //                 ),
+                //               ),
+                //         ],
+                //       );
+                //     },
+                //   ),
+                // )
               ],
             ),
           ),

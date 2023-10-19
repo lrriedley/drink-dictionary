@@ -127,23 +127,225 @@ Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
   'Wine': [
     {
       'subcategoryImage':
-          const AssetImage('assets/Drink Category Photos/Wine/RedWine.png'),
+          const AssetImage('assets/Drink Category Photos/Wine/Red Wine.png'),
       'subcategoryName': 'Red Wine'
     },
     {
       'subcategoryImage':
-          const AssetImage('assets/Drink Category Photos/Wine/WhiteWine.png'),
+          const AssetImage('assets/Drink Category Photos/Wine/White Wine.png'),
       'subcategoryName': 'White Wine'
     },
     {
       'subcategoryImage': const AssetImage(
-          'assets/Drink Category Photos/Wine/SparklingWine.png'),
+          'assets/Drink Category Photos/Wine/Sparkling Wine.png'),
       'subcategoryName': 'Sparkling Wine'
     },
     {
       'subcategoryImage':
           const AssetImage('assets/Drink Category Photos/Wine/Rose.png'),
       'subcategoryName': 'Rose'
+    },
+  ],
+  // ... (other categories)
+};
+
+Map<String, List<Map<String, dynamic>>> subcategoryToTertiary = {
+  'Whiskey': [
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Whiskey/Bourbon.png'),
+      'tertiaryName': 'Bourbon'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Whiskey/Irish Whiskey.png'),
+      'tertiaryName': 'Irish Whiskey'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Whiskey/Scotch.png'),
+      'tertiaryName': 'Scotch'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Whiskey/Tennessee Whiskey.png'),
+      'tertiaryName': 'Tennesse Whiskey'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Whiskey/Japanese Whiskey.png'),
+      'tertiaryName': 'Japanese Whiskey'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Whiskey/Rye Whiskey.png'),
+      'tertiaryName': 'Rye Whiskey'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Whiskey/Canadian Whisky.png'),
+      'tertiaryName': 'Canadian Whiskey'
+    },
+  ],
+  'Brandy': [
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Brandy/Cognac.png'),
+      'tertiaryName': 'Cognac'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Brandy/Armagnac.png'),
+      'tertiaryName': 'Armagnac'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Brandy/Grappa.png'),
+      'tertiaryName': 'Grappa'
+    },
+  ],
+  'Tequila': [
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Tequila/Blanco.png'),
+      'tertiaryName': 'Blanco'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Tequila/Gold.png'),
+      'tertiaryName': 'Gold'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Tequila/Reposado.png'),
+      'tertiaryName': 'Reposado'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Tequila/Anejo.png'),
+      'tertiaryName': 'Anejo'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Tequila/Mezcal.png'),
+      'tertiaryName': 'Mezcal'
+    },
+  ],
+  'Rum': [
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Spirits/Rum/Light.png'),
+      'tertiaryName': 'Light'
+    },
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Spirits/Rum/Dark.png'),
+      'tertiaryName': 'Dark'
+    },
+  ],
+  'Red Wine': [
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/Red Wine/Cabernet Sauvignon.png'),
+      'tertiaryName': 'Cabernet Sauvignon'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/Red Wine/Pinot Noir.png'),
+      'tertiaryName': 'Pinot Noir'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/Red Wine/Zinfandel.png'),
+      'tertiaryName': 'Zinfandel'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/Red Wine/Merlot.png'),
+      'tertiaryName': 'Merlot'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/Red Wine/Malbec.png'),
+      'tertiaryName': 'Malbec'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/Red Wine/Red Blends.png'),
+      'tertiaryName': 'Red Blends'
+    },
+  ],
+  'White Wine': [
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/White Wine/Chardonnay.png'),
+      'tertiaryName': 'Chardonnay'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/White Wine/Pinot Grigio.png'),
+      'tertiaryName': 'Pinot Grigio'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/White Wine/Sauvignon Blanc.png'),
+      'tertiaryName': 'Sauvignon Blanc'
+    },
+    {
+      'tertiaryImage': const AssetImage(
+          'assets/Drink Category Photos/Wine/White Wine/Riesling.png'),
+      'tertiaryName': 'Riesling'
+    },
+  ],
+  'Lager': [
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Draft.png'),
+      'tertiaryName': 'Draft'
+    },
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Bottle.png'),
+      'tertiaryName': 'Bottle'
+    },
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Can.png'),
+      'tertiaryName': 'Can'
+    },
+  ],
+  'Ale': [
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Draft.png'),
+      'tertiaryName': 'Draft'
+    },
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Bottle.png'),
+      'tertiaryName': 'Bottle'
+    },
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Can.png'),
+      'tertiaryName': 'Can'
+    },
+  ],
+  'Cider': [
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Draft.png'),
+      'tertiaryName': 'Draft'
+    },
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Bottle.png'),
+      'tertiaryName': 'Bottle'
+    },
+    {
+      'tertiaryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer/Can.png'),
+      'tertiaryName': 'Can'
     },
   ],
   // ... (other categories)
@@ -525,9 +727,7 @@ Map<String, dynamic> drinkData = {
       },
     },
   },
-  'Wine': {
-
-  }
+  'Wine': {}
   // ... Continue with other categories like Cocktails, Beer, etc.
 };
 

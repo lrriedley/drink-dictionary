@@ -1,14 +1,14 @@
-import 'package:drink_dictionary/screens/subcategory_screen.dart';
+import 'package:drink_dictionary/screens/tertiary_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SubcategoryButton extends StatelessWidget {
-  const SubcategoryButton({
+class TertiaryButton extends StatelessWidget {
+  const TertiaryButton({
     required this.image,
-    required this.subcategoryName,
+    required this.tertiaryName,
   });
 
-  final String subcategoryName;
+  final String tertiaryName;
   final AssetImage image;
 
   @override
@@ -17,8 +17,8 @@ class SubcategoryButton extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => SubcategoryScreen(
-              subcategory: subcategoryName, // Pass subcategory data
+            builder: (context) => TertiaryScreen(
+              tertiary: tertiaryName, // Pass subcategory data
             ),
           ),
         );
@@ -43,7 +43,7 @@ class SubcategoryButton extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  subcategoryName,
+                  tertiaryName,
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       color: Colors.white,
