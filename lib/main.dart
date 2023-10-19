@@ -1,4 +1,5 @@
 import 'package:drink_dictionary/screens/category_screen.dart';
+import 'package:drink_dictionary/screens/subcategory_screen.dart';
 import 'package:drink_dictionary/screens/drink_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
@@ -23,6 +24,12 @@ class MainApp extends StatelessWidget {
             final String category = settings.arguments as String;
             return MaterialPageRoute(
               builder: (context) => CategoryScreen(category: category),
+            );
+
+          case SubcategoryScreen.id:
+            final String subcategory = settings.arguments as String;
+            return MaterialPageRoute(
+              builder: (context) => SubcategoryScreen(subcategory: subcategory),
             );
 
           case DrinkScreen.id:

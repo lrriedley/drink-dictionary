@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   color: Colors.white,
-                  fontSize: 32, // text size
+                  fontSize: 32,
                   fontWeight: FontWeight.w600,
                 ),
               ),

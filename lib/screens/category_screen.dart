@@ -3,7 +3,7 @@ import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
-import 'package:drink_dictionary/components/category_button.dart';
+import 'package:drink_dictionary/components/subcategory_button.dart';
 import 'package:drink_dictionary/components/drink_card.dart';
 import 'package:drink_dictionary/Components/flatten_drinks.dart';
 
@@ -22,12 +22,12 @@ class CategoryScreen extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.black.withOpacity(0.7),
             title: Text(
-              category.toUpperCase(),
+              category,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   color: Colors.white,
-                  fontSize: 32, // text size
-                  fontWeight: FontWeight.bold,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
@@ -44,8 +44,8 @@ class CategoryScreen extends StatelessWidget {
                   child: Row(
                     children:
                         categoryToSubcategories[category]?.map((subcategory) {
-                              return CategoryButton(
-                                categoryName: subcategory['subcategoryName'],
+                              return SubcategoryButton(
+                                subcategoryName: subcategory['subcategoryName'],
                                 image: subcategory['subcategoryImage']
                                     as AssetImage,
                               );
@@ -115,10 +115,9 @@ class CategoryScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 400, // Adjust the height as needed
+                  height: 400,
                   child: ListView.builder(
-                    scrollDirection:
-                        Axis.vertical, // Vertical scrolling for rows
+                    scrollDirection: Axis.vertical,
                     itemCount:
                         (flattenDrinks(drinkData[category]).length / 4).ceil(),
                     itemBuilder: (BuildContext context, int index) {
