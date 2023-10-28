@@ -36,9 +36,9 @@ class CategoryScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                NightSearchBar(
-                    searchText:
-                        'Search for your favorite ${category.toLowerCase()}'),
+                // NightSearchBar(
+                //     searchText:
+                //         'Search for your favorite ${category.toLowerCase()}'),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -114,7 +114,7 @@ class CategoryScreen extends StatelessWidget {
                         fontSize: 20),
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 400,
                   child: ListView.builder(
                     scrollDirection: Axis.vertical,

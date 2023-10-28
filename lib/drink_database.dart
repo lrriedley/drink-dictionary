@@ -730,11 +730,3 @@ Map<String, dynamic> drinkData = {
   'Wine': {}
   // ... Continue with other categories like Cocktails, Beer, etc.
 };
-
-
-      // {
-      //   'drinkImage': AssetImage(''),
-      //   'drinkName': '',
-      //   'drinkDescription': '',
-      //   'drinkInstructions': ''
-      // },

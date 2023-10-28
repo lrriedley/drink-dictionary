@@ -5,13 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 class DrinkCard extends StatelessWidget {
   final AssetImage drinkImage;
   final String drinkName;
-  final String drinkDescription;
+  final String? drinkDescription;
 
-  const DrinkCard({
+  DrinkCard({
     Key? key,
     required this.drinkImage,
     required this.drinkName,
-    required this.drinkDescription,
+    this.drinkDescription,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class DrinkCard extends StatelessWidget {
             builder: (context) => DrinkScreen(
                 drinkImage: drinkImage,
                 drinkName: drinkName,
-                drinkDescription: drinkDescription),
+                drinkDescription: drinkDescription ?? ''),
           ),
         );
       },
@@ -44,15 +44,19 @@ class DrinkCard extends StatelessWidget {
               alignment: Alignment.topCenter,
             ),
           ),
-          Text(drinkName,
-              style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
-                ),
+          Text(
+            drinkName.length > 15
+                ? '${drinkName.substring(0, 13)}...'
+                : drinkName,
+            style: GoogleFonts.poppins(
+              textStyle: const TextStyle(
+                color: Colors.white,
+                fontSize: 10,
+                fontWeight: FontWeight.bold,
               ),
-              textAlign: TextAlign.end),
+            ),
+            textAlign: TextAlign.end,
+          ),
         ],
       ),
     );

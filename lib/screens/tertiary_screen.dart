@@ -36,9 +36,9 @@ class TertiaryScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                NightSearchBar(
-                    searchText:
-                        'Search for your favorite ${tertiary.toLowerCase()}'),
+                // NightSearchBar(
+                //     searchText:
+                //         'Search for your favorite ${tertiary.toLowerCase()}'),
 
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),

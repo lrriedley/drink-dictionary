@@ -36,9 +36,9 @@ class SubcategoryScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                NightSearchBar(
-                    searchText:
-                        'Search for your favorite ${subcategory.toLowerCase()}'),
+                // NightSearchBar(
+                //     searchText:
+                //         'Search for your favorite ${subcategory.toLowerCase()}'),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
