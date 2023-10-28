@@ -51,45 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                height: 40,
-                margin: const EdgeInsets.all(8),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                          color:
-                              Colors.pinkAccent), // Your desired border color
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                          color: Colors
-                              .pinkAccent), // Your desired border color when focused
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                          color: Colors
-                              .pinkAccent), // Your desired border color when enabled
-                    ),
-                    hintText: 'Search for your favorite drink',
-                    hintStyle: GoogleFonts.poppins(
-                      color: Colors.black,
-                      fontSize: 12,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding: const EdgeInsets.only(left: 8, bottom: 8),
-                    suffixIcon: Icon(
-                      Icons.search,
-                      color: Colors.black,
-                    ),
-                  ),
-                  onChanged: searchDrink,
-                  cursorColor: Colors.pinkAccent,
-                ),
+              CustomSearchBar(
+                onChanged: searchDrink,
+                searchText: 'Search for your favorite drink',
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -118,7 +82,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   children: drink.map((drinkss) {
                     return SizedBox(
-                      width: 100, // Set a fixed width for each DrinkCard
                       child: DrinkCard(
                         drinkImage: drinkss.drinkImage,
                         drinkName: drinkss.drinkName,

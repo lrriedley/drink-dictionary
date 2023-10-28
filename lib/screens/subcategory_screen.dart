@@ -1,17 +1,33 @@
+import 'package:drink_dictionary/Components/search_bar.dart';
 import 'package:drink_dictionary/Components/tertiary_button.dart';
-import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
-import 'package:drink_dictionary/components/drink_card.dart';
-import 'package:drink_dictionary/Components/flatten_drinks.dart';
+import 'package:drink_dictionary/drinks.dart';
 
-class SubcategoryScreen extends StatelessWidget {
+class SubcategoryScreen extends StatefulWidget {
   static const String id = 'subcategory_screen';
   final String subcategory;
 
   const SubcategoryScreen({super.key, required this.subcategory});
+
+  @override
+  State<SubcategoryScreen> createState() => _SubcategoryScreenState();
+}
+
+class _SubcategoryScreenState extends State<SubcategoryScreen> {
+  List<Drink> drink = drinks;
+
+  void searchDrink(String query) {
+    final suggestions = drinks.where((drinkss) {
+      final name = drinkss.drinkName.toLowerCase();
+      final input = query.toLowerCase();
+      return name.contains(input);
+    }).toList();
+    setState(() => drink = suggestions);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +38,7 @@ class SubcategoryScreen extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.black.withOpacity(0.7),
             title: Text(
-              subcategory,
+              widget.subcategory,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   color: Colors.white,
@@ -36,13 +52,14 @@ class SubcategoryScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // NightSearchBar(
-                //     searchText:
-                //         'Search for your favorite ${subcategory.toLowerCase()}'),
+                CustomSearchBar(
+                    onChanged: searchDrink,
+                    searchText:
+                        'Search for your favorite ${widget.subcategory.toLowerCase()}'),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: subcategoryToTertiary[subcategory]
+                    children: subcategoryToTertiary[widget.subcategory]
                             ?.map((tertiary) {
                           if (tertiary != null) {
                             // Add this null check
@@ -62,7 +79,7 @@ class SubcategoryScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
                   child: Text(
-                    subcategory,
+                    widget.subcategory,
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

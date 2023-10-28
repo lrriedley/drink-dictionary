@@ -1,35 +1,17 @@
-import 'package:drink_dictionary/drinks.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:drink_dictionary/drinks.dart';
 
-class NightSearchBar extends StatefulWidget {
+class CustomSearchBar extends StatelessWidget {
+  final Function(String) onChanged;
   final String searchText;
-  final List<Drink> drink;
 
-  NightSearchBar({
+  const CustomSearchBar({
     Key? key,
+    required this.onChanged,
     required this.searchText,
-    required this.drink,
-  });
+  }) : super(key: key);
 
   @override
-  State<NightSearchBar> createState() => _NightSearchBarState();
-}
-
-class _NightSearchBarState extends State<NightSearchBar> {
-  final controller = TextEditingController();
-  late List<Drink> drink;
-
-  void searchDrink(String query) {
-    final suggestions = drinks.where((drinkss) {
-      final name = drinkss.drinkName.toLowerCase();
-      final input = query.toLowerCase();
-      return name.contains(input);
-    }).toList();
-    setState(() => drink = suggestions);
-  }
-
   Widget build(BuildContext context) {
     return Container(
       height: 40,
@@ -38,22 +20,23 @@ class _NightSearchBarState extends State<NightSearchBar> {
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-                color: Colors.pinkAccent), // Your desired border color
+            borderSide: const BorderSide(
+              color: Colors.pinkAccent,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-                color: Colors
-                    .pinkAccent), // Your desired border color when focused
+            borderSide: const BorderSide(
+              color: Colors.pinkAccent,
+            ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-                color: Colors
-                    .pinkAccent), // Your desired border color when enabled
+            borderSide: const BorderSide(
+              color: Colors.pinkAccent,
+            ),
           ),
-          hintText: 'Search for your favorite drink',
+          hintText: searchText,
           hintStyle: GoogleFonts.poppins(
             color: Colors.black,
             fontSize: 12,
@@ -61,12 +44,12 @@ class _NightSearchBarState extends State<NightSearchBar> {
           filled: true,
           fillColor: Colors.white,
           contentPadding: const EdgeInsets.only(left: 8, bottom: 8),
-          suffixIcon: Icon(
+          suffixIcon: const Icon(
             Icons.search,
             color: Colors.black,
           ),
         ),
-        onChanged: searchDrink,
+        onChanged: onChanged,
         cursorColor: Colors.pinkAccent,
       ),
     );
