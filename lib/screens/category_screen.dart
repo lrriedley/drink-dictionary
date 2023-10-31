@@ -19,15 +19,23 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  List<Drink> drink = drinks;
+  List<Drink> drink = [];
+
+  @override
+  void initState() {
+    super.initState();
+    drink = drinks.where((drink) => drink.category == widget.category).toList();
+  }
 
   void searchDrink(String query) {
-    final suggestions = drinks.where((drinkss) {
-      final name = drinkss.drinkName.toLowerCase();
+    final suggestions = drinks.where((drink) {
+      final name = drink.drinkName.toLowerCase();
       final input = query.toLowerCase();
       return name.contains(input);
     }).toList();
-    setState(() => drink = suggestions);
+    setState(() => drink = suggestions
+        .where((drink) => drink.category == widget.category)
+        .toList());
   }
 
   @override
@@ -86,11 +94,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: drink.map((drinkss) {
+                    children: drink.map((drink) {
                       return SizedBox(
                         child: DrinkCard(
-                          drinkImage: drinkss.drinkImage,
-                          drinkName: drinkss.drinkName,
+                          drinkImage: drink.drinkImage,
+                          drinkName: drink.drinkName,
                         ),
                       );
                     }).toList(),

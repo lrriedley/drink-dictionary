@@ -4,25 +4,31 @@ Map<String, List<Map<String, dynamic>>> category = {
   'Spirits': [
     {
       'categoryImage':
-          AssetImage('assets/Drink Category Photos/Spirits/Spirits.png')
+          const AssetImage('assets/Drink Category Photos/Spirits/Spirits.png')
     }
   ],
   'Cocktails': [
     {
-      'categoryImage':
-          AssetImage('assets/Drink Category Photos/Cocktails/Cocktails.png')
+      'categoryImage': const AssetImage(
+          'assets/Drink Category Photos/Cocktails/Cocktails.png')
     }
   ],
   'Beer': [
-    {'categoryImage': AssetImage('assets/Drink Category Photos/Beer/Beer.png')}
+    {
+      'categoryImage':
+          const AssetImage('assets/Drink Category Photos/Beer/Beer.png')
+    }
   ],
   'Wine': [
-    {'categoryImage': AssetImage('assets/Drink Category Photos/Wine/Wine.png')}
+    {
+      'categoryImage':
+          const AssetImage('assets/Drink Category Photos/Wine/Wine.png')
+    }
   ],
   'Seltzers': [
     {
       'categoryImage':
-          AssetImage('assets/Drink Category Photos/Seltzer/Seltzers.png')
+          const AssetImage('assets/Drink Category Photos/Seltzer/Seltzers.png')
     }
   ],
 };
