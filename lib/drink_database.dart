@@ -75,22 +75,22 @@ Map<String, List<Map<String, dynamic>>> categoryToSubcategories = {
     {
       'subcategoryImage': const AssetImage(
           'assets/Drink Category Photos/Cocktails/Whiskey Cocktails.png'),
-      'subcategoryName': 'Whiskey'
+      'subcategoryName': 'whiskey'
     },
     {
       'subcategoryImage': const AssetImage(
           'assets/Drink Category Photos/Cocktails/Brandy Cocktails.png'),
-      'subcategoryName': 'Brandy'
+      'subcategoryName': 'brandy'
     },
     {
       'subcategoryImage': const AssetImage(
           'assets/Drink Category Photos/Cocktails/Tequila Cocktails.png'),
-      'subcategoryName': 'Tequila'
+      'subcategoryName': 'tequila'
     },
     {
       'subcategoryImage': const AssetImage(
           'assets/Drink Category Photos/Cocktails/Vodka Cocktails.png'),
-      'subcategoryName': 'Vodka'
+      'subcategoryName': 'vodka'
     },
     {
       'subcategoryImage': const AssetImage(

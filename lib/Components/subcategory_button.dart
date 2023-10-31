@@ -43,7 +43,7 @@ class SubcategoryButton extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  subcategoryName,
+                  subcategoryName.toUpperCase(),
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       color: Colors.white,

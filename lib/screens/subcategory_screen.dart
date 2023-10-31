@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/drinks.dart';
+import 'package:drink_dictionary/Components/drink_card.dart';
+import 'package:capitalize/capitalize.dart';
 
 class SubcategoryScreen extends StatefulWidget {
   static const String id = 'subcategory_screen';
@@ -17,15 +19,25 @@ class SubcategoryScreen extends StatefulWidget {
 }
 
 class _SubcategoryScreenState extends State<SubcategoryScreen> {
-  List<Drink> drink = drinks;
+  List<Drink> drink = [];
+
+  @override
+  void initState() {
+    super.initState();
+    drink = drinks
+        .where((drink) => drink.subcategory == widget.subcategory)
+        .toList();
+  }
 
   void searchDrink(String query) {
-    final suggestions = drinks.where((drinkss) {
-      final name = drinkss.drinkName.toLowerCase();
+    final suggestions = drinks.where((drink) {
+      final name = drink.drinkName.toLowerCase();
       final input = query.toLowerCase();
       return name.contains(input);
     }).toList();
-    setState(() => drink = suggestions);
+    setState(() => drink = suggestions
+        .where((drink) => drink.subcategory == widget.subcategory)
+        .toList());
   }
 
   @override
@@ -79,6 +91,29 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
                   child: Text(
+                    'Results',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20),
+                  ),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: drink.map((drink) {
+                      return SizedBox(
+                        child: DrinkCard(
+                          drinkImage: drink.drinkImage,
+                          drinkName: drink.drinkName,
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
+                  child: Text(
                     widget.subcategory,
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
@@ -86,36 +121,6 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
                         fontSize: 20),
                   ),
                 ),
-                // Container(
-                //   height: 400,
-                //   child: ListView.builder(
-                //     scrollDirection: Axis.vertical,
-                //     itemCount:
-                //         (flattenDrinks(drinkData[subcategory]).length / 4)
-                //             .ceil(),
-                //     itemBuilder: (BuildContext context, int index) {
-                //       final categoryDrinks = flattenDrinks(drinkData[category]);
-                //       final start = index * 4;
-                //       final end = (index + 1) * 4;
-
-                //       return Row(
-                //         children: [
-                //           for (var i = start; i < end; i++)
-                //             if (i < categoryDrinks.length)
-                //               Expanded(
-                //                 child: DrinkCard(
-                //                   drinkImage: categoryDrinks[i]['drinkImage'],
-                //                   drinkName: categoryDrinks[i]['drinkName'],
-                //                   drinkDescription: categoryDrinks[i]
-                //                           ['drinkDescription'] ??
-                //                       '',
-                //                 ),
-                //               ),
-                //         ],
-                //       );
-                //     },
-                //   ),
-                // )
               ],
             ),
           ),

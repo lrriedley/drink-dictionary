@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  capitalize:
+    dependency: "direct main"
+    description:
+      name: capitalize
+      sha256: "2d5679c78c64fa1369abfd4a87cb2c4d663e39693727f76546ebe6d4c373d1f9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   characters:
     dependency: transitive
     description:
