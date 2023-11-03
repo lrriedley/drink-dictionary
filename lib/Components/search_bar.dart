@@ -39,7 +39,7 @@ class CustomSearchBar extends StatelessWidget {
           hintText: searchText,
           hintStyle: GoogleFonts.poppins(
             color: Colors.black,
-            fontSize: 12,
+            fontSize: 13,
           ),
           filled: true,
           fillColor: Colors.white,

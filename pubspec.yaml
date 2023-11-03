@@ -8,7 +8,6 @@ environment:
 
 dependencies:
   azlistview: ^2.0.0
-  capitalize: ^0.0.1
   flutter:
     sdk: flutter
   flutter_typeahead: ^4.8.0

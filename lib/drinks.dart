@@ -8,7 +8,7 @@ class Drink {
   final String? tertiary;
   final String? drinkDescription;
 
-  const Drink({
+  Drink({
     required this.drinkName,
     required this.drinkImage,
     this.category,
@@ -19,407 +19,416 @@ class Drink {
 }
 
 List<Drink> drinks = [
-  const Drink(
+  Drink(
     drinkImage:
-        AssetImage('assets/Spirits/Whiskey/Bourbon/Bulleit Bourbon.png'),
+        const AssetImage('assets/Spirits/Whiskey/Bourbon/Bulleit Bourbon.png'),
     drinkName: 'Bulleit Bourbon',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Spirits/Whiskey/Bourbon/Blanton\'s.png'),
+  Drink(
+    drinkImage:
+        const AssetImage('assets/Spirits/Whiskey/Bourbon/Blanton\'s.png'),
     drinkName: 'Blanton\'s',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Spirits/Whiskey/Bourbon/Buffalo Trace.png'),
+  Drink(
+    drinkImage:
+        const AssetImage('assets/Spirits/Whiskey/Bourbon/Buffalo Trace.png'),
     drinkName: 'Buffalo Trace',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkImage:
-        AssetImage('assets/Spirits/Whiskey/Bourbon/Woodford Reserve.png'),
+        const AssetImage('assets/Spirits/Whiskey/Bourbon/Woodford Reserve.png'),
     drinkName: 'Woodford Reserve',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Spirits/Whiskey/Bourbon/Jim Beam.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Spirits/Whiskey/Bourbon/Jim Beam.png'),
     drinkName: 'Jim Beam',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Spirits/Whiskey/Bourbon/Knob Creek.png'),
+  Drink(
+    drinkImage:
+        const AssetImage('assets/Spirits/Whiskey/Bourbon/Knob Creek.png'),
     drinkName: 'Knob Creek',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Spirits/Whiskey/Bourbon/Old Forester.png'),
+  Drink(
+    drinkImage:
+        const AssetImage('assets/Spirits/Whiskey/Bourbon/Old Forester.png'),
     drinkName: 'Old Forester',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage:
-        AssetImage('assets/Spirits/Whiskey/Irish Whiskey/Proper Twelve.png'),
+  Drink(
+    drinkImage: const AssetImage(
+        'assets/Spirits/Whiskey/Irish Whiskey/Proper Twelve.png'),
     drinkName: 'Proper Twelve',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Irish Whiskey',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage:
-        AssetImage('assets/Spirits/Whiskey/Irish Whiskey/Tullamore D.E.W..png'),
+  Drink(
+    drinkImage: const AssetImage(
+        'assets/Spirits/Whiskey/Irish Whiskey/Tullamore D.E.W..png'),
     drinkName: 'Tullamore D.E.W.',
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Irish Whiskey',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Spirits/Brandy/Cognac/Hennessy XO.png'),
+  Drink(
+    drinkImage:
+        const AssetImage('assets/Spirits/Brandy/Cognac/Hennessy XO.png'),
     drinkName: 'Hennessy XO',
     category: 'Spirits',
     subcategory: 'Brandy',
     tertiary: 'Cognac',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkImage:
-        AssetImage('assets/Spirits/Tequila/Blanco/Casamigos Blanco.png'),
+        const AssetImage('assets/Spirits/Tequila/Blanco/Casamigos Blanco.png'),
     drinkName: 'Casamigos Blanco',
     category: 'Spirits',
     subcategory: 'Tequila',
     tertiary: 'Blanco',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage:
-        AssetImage('assets/Spirits/Tequila/Blanco/Jose Cuervo Blanco.png'),
+  Drink(
+    drinkImage: const AssetImage(
+        'assets/Spirits/Tequila/Blanco/Jose Cuervo Blanco.png'),
     drinkName: 'Jose Cuervo Blanco',
     category: 'Spirits',
     subcategory: 'Tequila',
     tertiary: 'Blanco',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Spirits/Tequila/Blanco/Patron Blanco.png'),
+  Drink(
+    drinkImage:
+        const AssetImage('assets/Spirits/Tequila/Blanco/Patron Blanco.png'),
     drinkName: 'Patron Blanco',
     category: 'Spirits',
     subcategory: 'Tequila',
     tertiary: 'Blanco',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Brandy/Sazerac.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Brandy/Sazerac.png'),
     drinkName: 'Sazerac',
     category: 'Cocktails',
     subcategory: 'brandy',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Brandy/Sidecar.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Brandy/Sidecar.png'),
     drinkName: 'Sidecar',
     category: 'Cocktails',
     subcategory: 'brandy',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Gin/French 75.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Gin/French 75.png'),
     drinkName: 'French 75',
     category: 'Cocktails',
     subcategory: 'gin',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Gin/Gimlet.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Gin/Gimlet.png'),
     drinkName: 'Gimlet',
     category: 'Cocktails',
     subcategory: 'gin',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Gin/Negroni.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Gin/Negroni.png'),
     drinkName: 'Negroni',
     category: 'Cocktails',
     subcategory: 'gin',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Rum/Bahama Mama.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Rum/Bahama Mama.png'),
     drinkName: 'Bahama Mama',
     category: 'Cocktails',
     subcategory: 'rum',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Rum/Daiquiri.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Rum/Daiquiri.png'),
     drinkName: 'Daiquiri',
     category: 'Cocktails',
     subcategory: 'rum',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Rum/Dark n\' Stormy.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Rum/Dark n\' Stormy.png'),
     drinkName: 'Dark n\' Stormy',
     category: 'Cocktails',
     subcategory: 'rum',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Rum/Mai Tai.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Rum/Mai Tai.png'),
     drinkName: 'Mai Tai',
     category: 'Cocktails',
     subcategory: 'rum',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Rum/Mojito.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Rum/Mojito.png'),
     drinkName: 'Mojito',
     category: 'Cocktails',
     subcategory: 'rum',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Rum/Painkiller.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Rum/Painkiller.png'),
     drinkName: 'Painkiller',
     category: 'Cocktails',
     subcategory: 'rum',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Rum/Pina Colada.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Rum/Pina Colada.png'),
     drinkName: 'Pina Colada',
     category: 'Cocktails',
     subcategory: 'rum',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Tequila/Margarita.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Tequila/Margarita.png'),
     drinkName: 'Margarita',
     category: 'Cocktails',
     subcategory: 'tequila',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Tequila/Paloma.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Tequila/Paloma.png'),
     drinkName: 'Paloma',
     category: 'Cocktails',
     subcategory: 'tequila',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Tequila/Tequila Sunrise.png'),
+  Drink(
+    drinkImage:
+        const AssetImage('assets/Cocktails/Tequila/Tequila Sunrise.png'),
     drinkName: 'Tequila Sunrise',
     category: 'Cocktails',
     subcategory: 'tequila',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Untitled design.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Untitled design.png'),
     drinkName: 'Tito\'s and Soda',
     category: 'Cocktails',
     subcategory: 'vodka',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Wine/Americano.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Wine/Americano.png'),
     drinkName: 'Americano',
     category: 'Cocktails',
     subcategory: 'wine',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Wine/Bellini.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Wine/Bellini.png'),
     drinkName: 'Bellini',
     category: 'Cocktails',
     subcategory: 'wine',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
-    drinkImage: AssetImage('assets/Cocktails/Wine/Mimosa.png'),
+  Drink(
+    drinkImage: const AssetImage('assets/Cocktails/Wine/Mimosa.png'),
     drinkName: 'Mimosa',
     category: 'Cocktails',
     subcategory: 'wine',
     tertiary: '',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Bud Light',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Bud Light.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Bud Light.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Budweiser',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Budweiser.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Budweiser.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Coors Light',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Coors Light.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Coors Light.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Dos Equis',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Dos Equis.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Dos Equis.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Heineken',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Heineken.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Heineken.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Corona',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Corona.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Corona.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Stella Artois',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Stella Artois.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Stella Artois.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Michelob Ultra',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Michelob Ultra.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Michelob Ultra.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Modelo',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Modelo.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Bottle/Modelo.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Pabst Blue Ribbon',
-    drinkImage: AssetImage('assets/Beer/Lager/Bottle/Pabst Blue Ribbon.png'),
+    drinkImage:
+        const AssetImage('assets/Beer/Lager/Bottle/Pabst Blue Ribbon.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Bud Light',
-    drinkImage: AssetImage('assets/Beer/Lager/Can/Bud Light.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Can/Bud Light.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Can',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Pabst Blue Ribbon',
-    drinkImage: AssetImage('assets/Beer/Lager/Can/Pabst Blue Ribbon.png'),
+    drinkImage: const AssetImage('assets/Beer/Lager/Can/Pabst Blue Ribbon.png'),
     category: 'Beer',
     subcategory: 'Lager',
     tertiary: 'Can',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Blue Moon',
-    drinkImage: AssetImage('assets/Beer/Ale/Bottle/Blue Moon.png'),
+    drinkImage: const AssetImage('assets/Beer/Ale/Bottle/Blue Moon.png'),
     category: 'Beer',
     subcategory: 'Ale',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Guinness',
-    drinkImage: AssetImage('assets/Beer/Ale/Bottle/Guinness.png'),
+    drinkImage: const AssetImage('assets/Beer/Ale/Bottle/Guinness.png'),
     category: 'Beer',
     subcategory: 'Ale',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Fat Tire',
-    drinkImage: AssetImage('assets/Beer/Ale/Bottle/Fat Tire.png'),
+    drinkImage: const AssetImage('assets/Beer/Ale/Bottle/Fat Tire.png'),
     category: 'Beer',
     subcategory: 'Ale',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Kona Big Wave',
-    drinkImage: AssetImage('assets/Beer/Ale/Bottle/Kona Big Wave.png'),
+    drinkImage: const AssetImage('assets/Beer/Ale/Bottle/Kona Big Wave.png'),
     category: 'Beer',
     subcategory: 'Ale',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Sierra Nevada Pale Ale',
-    drinkImage: AssetImage('assets/Beer/Ale/Bottle/Sierra Nevada Pale Ale.png'),
+    drinkImage:
+        const AssetImage('assets/Beer/Ale/Bottle/Sierra Nevada Pale Ale.png'),
     category: 'Beer',
     subcategory: 'Ale',
     tertiary: 'Bottle',
     drinkDescription: '',
   ),
-  const Drink(
+  Drink(
     drinkName: 'Guinness',
-    drinkImage: AssetImage('assets/Beer/Ale/Can/Guinness.png'),
+    drinkImage: const AssetImage('assets/Beer/Ale/Can/Guinness.png'),
     category: 'Beer',
     subcategory: 'Ale',
     tertiary: 'Can',

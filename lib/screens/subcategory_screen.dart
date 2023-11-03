@@ -79,8 +79,8 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
                                 const AssetImage(
                                     'path_to_placeholder_image'), // Provide a placeholder image path or handle null case
                           );
-                                                  return const SizedBox
-                              .shrink(); // Return an empty SizedBox if tertiary is null
+                          // return const SizedBox
+                          //     .shrink(); // Return an empty SizedBox if tertiary is null
                         }).toList() ??
                         [],
                   ),

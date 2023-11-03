@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/components/subcategory_button.dart';
-import 'package:drink_dictionary/Components/flatten_drinks.dart';
 import 'package:drink_dictionary/drinks.dart';
 import 'package:drink_dictionary/Components/drink_card.dart';
+import 'package:drink_dictionary/Components/alphabet_scroll.dart';
 
 class CategoryScreen extends StatefulWidget {
   static const String id = 'category_screen';
@@ -115,36 +115,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 400,
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount:
-                        (flattenDrinks(drinkData[widget.category]).length / 4)
-                            .ceil(),
-                    itemBuilder: (BuildContext context, int index) {
-                      final categoryDrinks =
-                          flattenDrinks(drinkData[widget.category]);
-                      final start = index * 4;
-                      final end = (index + 1) * 4;
-
-                      return Row(
-                        children: [
-                          for (var i = start; i < end; i++)
-                            if (i < categoryDrinks.length)
-                              Expanded(
-                                child: DrinkCard(
-                                  drinkImage: categoryDrinks[i]['drinkImage'],
-                                  drinkName: categoryDrinks[i]['drinkName'],
-                                  drinkDescription: categoryDrinks[i]
-                                          ['drinkDescription'] ??
-                                      '',
-                                ),
-                              ),
-                        ],
-                      );
-                    },
+                  height: 500,
+                  child: AlphabetScrollWidget(
+                    items: drinks
+                        .where((drink) => drink.category == widget.category)
+                        .toList(),
                   ),
-                )
+                ),
               ],
             ),
           ),

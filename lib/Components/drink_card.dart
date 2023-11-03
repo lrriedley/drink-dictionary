@@ -51,7 +51,7 @@ class DrinkCard extends StatelessWidget {
             style: GoogleFonts.poppins(
               textStyle: const TextStyle(
                 color: Colors.white,
-                fontSize: 10,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
               ),
             ),
