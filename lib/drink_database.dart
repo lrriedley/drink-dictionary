@@ -28,7 +28,7 @@ Map<String, List<Map<String, dynamic>>> category = {
   'Seltzers': [
     {
       'categoryImage':
-          const AssetImage('assets/Drink Category Photos/Seltzer/Seltzers.png')
+          const AssetImage('assets/Drink Category Photos/Seltzers/Seltzers.png')
     }
   ],
 };

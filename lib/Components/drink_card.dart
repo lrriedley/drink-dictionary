@@ -5,13 +5,23 @@ import 'package:google_fonts/google_fonts.dart';
 class DrinkCard extends StatelessWidget {
   final AssetImage drinkImage;
   final String drinkName;
+  final String category;
   final String? drinkDescription;
+  final List? aroma;
+  final List? taste;
+  final List? finish;
+  final List? instructions;
 
   const DrinkCard({
     Key? key,
     required this.drinkImage,
     required this.drinkName,
+    required this.category,
     this.drinkDescription,
+    this.aroma,
+    this.taste,
+    this.finish,
+    this.instructions,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -20,9 +30,15 @@ class DrinkCard extends StatelessWidget {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => DrinkScreen(
-                drinkImage: drinkImage,
-                drinkName: drinkName,
-                drinkDescription: drinkDescription ?? ''),
+              drinkImage: drinkImage,
+              drinkName: drinkName,
+              category: category,
+              drinkDescription: drinkDescription ?? '',
+              aroma: aroma,
+              taste: taste,
+              finish: finish,
+              instructions: instructions,
+            ),
           ),
         );
       },
@@ -51,7 +67,7 @@ class DrinkCard extends StatelessWidget {
             style: GoogleFonts.poppins(
               textStyle: const TextStyle(
                 color: Colors.white,
-                fontSize: 10,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
               ),
             ),

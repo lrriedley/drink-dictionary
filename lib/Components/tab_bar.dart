@@ -6,26 +6,21 @@ class NewTabBar extends StatelessWidget {
     super.key,
   });
 
-  final Color color1 = const Color(0xFF16191B);
-  final Color color2 = const Color(0xFF283337);
-  final Color color3 = const Color(0xFF16191B);
+
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(15),
-        topRight: Radius.circular(15),
-      ),
       child: Container(
-        height: 80,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [color1, color2, color3],
-          ),
-        ),
+        height: 90,
+        decoration: const BoxDecoration(
+          color: Colors.transparent,
+          border: Border(
+            top: BorderSide(
+              color: Color.fromARGB(255, 255, 0, 225),
+              width: .25,
+            ),
+        ),),
         child: const BottomTabBar(),
       ),
     );

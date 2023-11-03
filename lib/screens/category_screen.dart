@@ -1,25 +1,29 @@
-import 'package:drink_dictionary/Components/search_bar.dart';
+import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/components/subcategory_button.dart';
-import 'package:drink_dictionary/Components/flatten_drinks.dart';
 import 'package:drink_dictionary/drinks.dart';
-import 'package:drink_dictionary/Components/drink_card.dart';
+import 'package:drink_dictionary/components/drink_card.dart';
+import 'package:drink_dictionary/components/alphabet_scroll.dart';
 
 class CategoryScreen extends StatefulWidget {
   static const String id = 'category_screen';
   final String category;
 
-  const CategoryScreen({super.key, required this.category});
+
+  const CategoryScreen({Key? key, required this.category,})
+      : super(key: key);
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  List<Drink> drink = [];
+ late List<Drink> drink;
+final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
+
 
   @override
   void initState() {
@@ -27,16 +31,21 @@ class _CategoryScreenState extends State<CategoryScreen> {
     drink = drinks.where((drink) => drink.category == widget.category).toList();
   }
 
+
   void searchDrink(String query) {
     final suggestions = drinks.where((drink) {
       final name = drink.drinkName.toLowerCase();
       final input = query.toLowerCase();
       return name.contains(input);
     }).toList();
-    setState(() => drink = suggestions
-        .where((drink) => drink.category == widget.category)
-        .toList());
+    setState(() {
+      drink = suggestions.where((drink) => drink.category == widget.category).toList();
+      alphabetScrollKey.currentState?.updateAlphabetList(query);
+    });
   }
+
+ 
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +56,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.black.withOpacity(0.7),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
             title: Text(
               widget.category,
               style: GoogleFonts.poppins(
@@ -56,6 +69,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
+            ),
+            flexibleSpace: Image(
+              image: AssetImage('assets/Drink Category Photos/${widget.category}/${widget.category}.png'),
+              fit: BoxFit.cover,
             ),
           ),
           body: SingleChildScrollView(
@@ -81,70 +98,22 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         [],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
-                  child: Text(
-                    'Results',
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: drink.map((drink) {
-                      return SizedBox(
-                        child: DrinkCard(
-                          drinkImage: drink.drinkImage,
-                          drinkName: drink.drinkName,
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
+               Padding(
+                  padding: const EdgeInsets.only(left: 8),
                   child: Text(
                     widget.category,
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: const Color.fromRGBO(255, 255, 255, 1),
                         fontSize: 20),
                   ),
                 ),
                 SizedBox(
-                  height: 400,
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount:
-                        (flattenDrinks(drinkData[widget.category]).length / 4)
-                            .ceil(),
-                    itemBuilder: (BuildContext context, int index) {
-                      final categoryDrinks =
-                          flattenDrinks(drinkData[widget.category]);
-                      final start = index * 4;
-                      final end = (index + 1) * 4;
-
-                      return Row(
-                        children: [
-                          for (var i = start; i < end; i++)
-                            if (i < categoryDrinks.length)
-                              Expanded(
-                                child: DrinkCard(
-                                  drinkImage: categoryDrinks[i]['drinkImage'],
-                                  drinkName: categoryDrinks[i]['drinkName'],
-                                  drinkDescription: categoryDrinks[i]
-                                          ['drinkDescription'] ??
-                                      '',
-                                ),
-                              ),
-                        ],
-                      );
-                    },
-                  ),
-                )
+                  height: 550,
+                  child: AlphabetScrollWidget(
+                  key: alphabetScrollKey,
+                  items: drink,
+                ),),
               ],
             ),
           ),

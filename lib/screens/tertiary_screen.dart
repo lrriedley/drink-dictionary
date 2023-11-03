@@ -3,7 +3,8 @@ import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drinks.dart';
-import 'package:drink_dictionary/Components/drink_card.dart';
+import 'package:drink_dictionary/components/drink_card.dart';
+import 'package:drink_dictionary/components/alphabet_scroll.dart';
 
 class TertiaryScreen extends StatefulWidget {
   static const String id = 'tertiary_screen';
@@ -44,6 +45,10 @@ class _TertiaryScreenState extends State<TertiaryScreen> {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.black.withOpacity(0.7),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
             title: Text(
               widget.tertiary,
               style: GoogleFonts.poppins(
@@ -82,6 +87,12 @@ class _TertiaryScreenState extends State<TertiaryScreen> {
                         child: DrinkCard(
                           drinkImage: drink.drinkImage,
                           drinkName: drink.drinkName,
+                          category: drink.category,
+                          drinkDescription: drink.drinkDescription,
+                          instructions: drink.instructions,
+                          aroma: drink.aroma,
+                          taste: drink.taste,
+                          finish: drink.finish,
                         ),
                       );
                     }).toList(),
@@ -97,35 +108,14 @@ class _TertiaryScreenState extends State<TertiaryScreen> {
                         fontSize: 20),
                   ),
                 ),
-                // Container(
-                //   height: 400,
-                //   child: ListView.builder(
-                //     scrollDirection: Axis.vertical,
-                //     itemCount:
-                //         (flattenDrinks(drinkData[subcategory]).length / 4).ceil(),
-                //     itemBuilder: (BuildContext context, int index) {
-                //       final categoryDrinks = flattenDrinks(drinkData[category]);
-                //       final start = index * 4;
-                //       final end = (index + 1) * 4;
-
-                //       return Row(
-                //         children: [
-                //           for (var i = start; i < end; i++)
-                //             if (i < categoryDrinks.length)
-                //               Expanded(
-                //                 child: DrinkCard(
-                //                   drinkImage: categoryDrinks[i]['drinkImage'],
-                //                   drinkName: categoryDrinks[i]['drinkName'],
-                //                   drinkDescription: categoryDrinks[i]
-                //                           ['drinkDescription'] ??
-                //                       '',
-                //                 ),
-                //               ),
-                //         ],
-                //       );
-                //     },
-                //   ),
-                // )
+               SizedBox(
+                  height: 500,
+                  child: AlphabetScrollWidget(
+                    items: drinks
+                        .where((drink) => drink.tertiary == widget.tertiary)
+                        .toList(),
+                  ),
+                ),
               ],
             ),
           ),

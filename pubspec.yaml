@@ -8,7 +8,6 @@ environment:
 
 dependencies:
   azlistview: ^2.0.0
-  capitalize: ^0.0.1
   flutter:
     sdk: flutter
   flutter_typeahead: ^4.8.0
@@ -65,7 +64,7 @@ flutter:
     - assets/Drink Category Photos/Wine/
     - assets/Drink Category Photos/Wine/Red Wine/
     - assets/Drink Category Photos/Wine/White Wine/
-    - assets/Drink Category Photos/Seltzer/
+    - assets/Drink Category Photos/Seltzers/
     - assets/Drink Category Photos/Mixers/
     - assets/Drink Category Photos/Other/
     - assets/Cocktails/Brandy/

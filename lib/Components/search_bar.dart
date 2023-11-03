@@ -21,36 +21,45 @@ class CustomSearchBar extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(
-              color: Colors.pinkAccent,
+              color: Color.fromARGB(255, 255, 0, 225),
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(
-              color: Colors.pinkAccent,
+              color: Color.fromARGB(255, 255, 0, 225),
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(
-              color: Colors.pinkAccent,
+              color: Color.fromARGB(255, 255, 0, 225),
             ),
           ),
           hintText: searchText,
           hintStyle: GoogleFonts.poppins(
             color: Colors.black,
-            fontSize: 12,
+            fontSize: 13,
           ),
           filled: true,
           fillColor: Colors.white,
           contentPadding: const EdgeInsets.only(left: 8, bottom: 8),
-          suffixIcon: const Icon(
+          prefixIcon: const Icon(
             Icons.search,
             color: Colors.black,
           ),
+          suffixIcon: IconButton(
+            icon: const Icon(
+              Icons.clear,
+              color: Colors.black,
+            ),
+            onPressed: () {
+             
+            },
+          ),
         ),
         onChanged: onChanged,
-        cursorColor: Colors.pinkAccent,
+        cursorColor: const Color.fromARGB(255, 255, 0, 225),
       ),
     );
   }
