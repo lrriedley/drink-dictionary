@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TertiaryButton extends StatelessWidget {
-  const TertiaryButton({
+  const TertiaryButton({super.key, 
     required this.image,
     required this.tertiaryName,
   });

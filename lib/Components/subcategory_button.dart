@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SubcategoryButton extends StatelessWidget {
   const SubcategoryButton({
+    super.key,
     required this.image,
     required this.subcategoryName,
   });
@@ -43,7 +44,8 @@ class SubcategoryButton extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  subcategoryName.toUpperCase(),
+                  subcategoryName[0].toUpperCase() +
+                      subcategoryName.substring(1),
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       color: Colors.white,

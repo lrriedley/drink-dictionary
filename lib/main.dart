@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: HomeScreen.id,
       routes: {
-        HomeScreen.id: (context) => HomeScreen(),
+        HomeScreen.id: (context) => const HomeScreen(),
       },
       onGenerateRoute: (settings) {
         switch (settings.name) {

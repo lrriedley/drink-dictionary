@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/drinks.dart';
 import 'package:drink_dictionary/Components/drink_card.dart';
-import 'package:capitalize/capitalize.dart';
 
 class SubcategoryScreen extends StatefulWidget {
   static const String id = 'subcategory_screen';
@@ -73,16 +72,14 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
                   child: Row(
                     children: subcategoryToTertiary[widget.subcategory]
                             ?.map((tertiary) {
-                          if (tertiary != null) {
-                            // Add this null check
-                            return TertiaryButton(
-                              tertiaryName: tertiary['tertiaryName'] ?? '',
-                              image: tertiary['tertiaryImage'] as AssetImage? ??
-                                  AssetImage(
-                                      'path_to_placeholder_image'), // Provide a placeholder image path or handle null case
-                            );
-                          }
-                          return SizedBox
+                          // Add this null check
+                          return TertiaryButton(
+                            tertiaryName: tertiary['tertiaryName'] ?? '',
+                            image: tertiary['tertiaryImage'] as AssetImage? ??
+                                const AssetImage(
+                                    'path_to_placeholder_image'), // Provide a placeholder image path or handle null case
+                          );
+                                                  return const SizedBox
                               .shrink(); // Return an empty SizedBox if tertiary is null
                         }).toList() ??
                         [],

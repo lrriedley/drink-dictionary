@@ -7,7 +7,7 @@ class DrinkCard extends StatelessWidget {
   final String drinkName;
   final String? drinkDescription;
 
-  DrinkCard({
+  const DrinkCard({
     Key? key,
     required this.drinkImage,
     required this.drinkName,
