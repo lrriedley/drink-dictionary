@@ -7,6 +7,7 @@ class Drink {
   final String? subcategory;
   final String? tertiary;
   final String? drinkDescription;
+  final String? taste;
 
   Drink({
     required this.drinkName,
@@ -15,6 +16,7 @@ class Drink {
     this.subcategory,
     this.tertiary,
     this.drinkDescription,
+    this.taste,
   });
 }
 
@@ -26,7 +28,8 @@ List<Drink> drinks = [
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
-    drinkDescription: '',
+    drinkDescription:
+        'Bourbon with a bold, spicy character with a finish that\'s clean and smooth.',
   ),
   Drink(
     drinkImage:

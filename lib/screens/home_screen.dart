@@ -85,6 +85,7 @@ class HomeScreenState extends State<HomeScreen> {
                       child: DrinkCard(
                         drinkImage: drinkss.drinkImage,
                         drinkName: drinkss.drinkName,
+                        drinkDescription: drinkss.drinkDescription,
                       ),
                     );
                   }).toList(),
