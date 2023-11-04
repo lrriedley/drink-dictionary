@@ -7,7 +7,8 @@ class Drink {
   final String? subcategory;
   final String? tertiary;
   final String? drinkDescription;
-  final String? taste;
+  final List? taste;
+  final List? instructions;
 
   Drink({
     required this.drinkName,
@@ -17,6 +18,7 @@ class Drink {
     this.tertiary,
     this.drinkDescription,
     this.taste,
+    this.instructions,
   });
 }
 
@@ -30,6 +32,7 @@ List<Drink> drinks = [
     tertiary: 'Bourbon',
     drinkDescription:
         'Bourbon with a bold, spicy character with a finish that\'s clean and smooth.',
+    taste: ['🪵 Oak', '🍁 Maple'],
   ),
   Drink(
     drinkImage:
@@ -38,17 +41,19 @@ List<Drink> drinks = [
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
-    drinkDescription: '',
+    drinkDescription:
+        'A renowned single barrel bourbon that boasts a palate of caramel, vanilla, honey, and a subtle hint of citrus, making it a cherished gem among bourbon enthusiasts.',
   ),
   Drink(
-    drinkImage:
-        const AssetImage('assets/Spirits/Whiskey/Bourbon/Buffalo Trace.png'),
-    drinkName: 'Buffalo Trace',
-    category: 'Spirits',
-    subcategory: 'Whiskey',
-    tertiary: 'Bourbon',
-    drinkDescription: '',
-  ),
+      drinkImage:
+          const AssetImage('assets/Spirits/Whiskey/Bourbon/Buffalo Trace.png'),
+      drinkName: 'Buffalo Trace',
+      category: 'Spirits',
+      subcategory: 'Whiskey',
+      tertiary: 'Bourbon',
+      drinkDescription:
+          'A historic bourbon known for its rich and complex flavor profile. Buffalo Trace offers a delightful combination of caramel, toffee, and a touch of fruitiness.',
+      taste: ['🍦 Vanilla', '🌿 Mint']),
   Drink(
     drinkImage:
         const AssetImage('assets/Spirits/Whiskey/Bourbon/Woodford Reserve.png'),
@@ -56,7 +61,7 @@ List<Drink> drinks = [
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
-    drinkDescription: '',
+    drinkDescription: 'A classic, well-balanced bourbon.',
   ),
   Drink(
     drinkImage: const AssetImage('assets/Spirits/Whiskey/Bourbon/Jim Beam.png'),
@@ -64,7 +69,8 @@ List<Drink> drinks = [
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
-    drinkDescription: '',
+    drinkDescription:
+        'Classic American whiskey known for its smooth and mellow flavor with hints of caramel and vanilla.',
   ),
   Drink(
     drinkImage:
@@ -73,7 +79,8 @@ List<Drink> drinks = [
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
-    drinkDescription: '',
+    drinkDescription:
+        'A full-bodied bourbon whiskey known for its rich, sweet, and robust flavor profile, featuring notes of caramel, toasted oak, and a long, warming finish. It\'s aged for a minimum of nine years, resulting in a deep and complex bourbon experience.',
   ),
   Drink(
     drinkImage:
@@ -82,35 +89,46 @@ List<Drink> drinks = [
     category: 'Spirits',
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
-    drinkDescription: '',
+    drinkDescription:
+        'A historic bourbon brand renowned for its smooth and balanced flavor profile, marked by notes of caramel, vanilla, and a hint of spice, making it a classic choice for bourbon enthusiasts.',
   ),
   Drink(
-    drinkImage: const AssetImage(
-        'assets/Spirits/Whiskey/Irish Whiskey/Proper Twelve.png'),
-    drinkName: 'Proper Twelve',
-    category: 'Spirits',
-    subcategory: 'Whiskey',
-    tertiary: 'Irish Whiskey',
-    drinkDescription: '',
-  ),
+      drinkImage: const AssetImage(
+          'assets/Spirits/Whiskey/Irish Whiskey/Proper Twelve.png'),
+      drinkName: 'Proper Twelve',
+      category: 'Spirits',
+      subcategory: 'Whiskey',
+      tertiary: 'Irish Whiskey',
+      drinkDescription:
+          'Proper No. Twelve Irish Whiskey is a triple-distilled blend of fine grain and single malt that is bourbon-barrel-aged for 4 years.',
+      taste: ['🍦 Vanilla', '🍯 Honey', '🌾 Barley', '🪵 Oak']),
   Drink(
-    drinkImage: const AssetImage(
-        'assets/Spirits/Whiskey/Irish Whiskey/Tullamore D.E.W..png'),
-    drinkName: 'Tullamore D.E.W.',
-    category: 'Spirits',
-    subcategory: 'Whiskey',
-    tertiary: 'Irish Whiskey',
-    drinkDescription: '',
-  ),
+      drinkImage: const AssetImage(
+          'assets/Spirits/Whiskey/Irish Whiskey/Tullamore D.E.W..png'),
+      drinkName: 'Tullamore D.E.W.',
+      category: 'Spirits',
+      subcategory: 'Whiskey',
+      tertiary: 'Irish Whiskey',
+      drinkDescription:
+          'Tullamore D.E.W. is an Irish whiskey that\'s a blend of three styles of whiskey: grain, malt, and pot still. The grain whiskey gives the blend a sweetness, the malt brings fruitiness, and the pot still gives it the iconic Irish whiskey spice.',
+      taste: [
+        '🌾 Barley',
+        '🍇 Fruit',
+      ]),
   Drink(
-    drinkImage:
-        const AssetImage('assets/Spirits/Brandy/Cognac/Hennessy XO.png'),
-    drinkName: 'Hennessy XO',
-    category: 'Spirits',
-    subcategory: 'Brandy',
-    tertiary: 'Cognac',
-    drinkDescription: '',
-  ),
+      drinkImage:
+          const AssetImage('assets/Spirits/Brandy/Cognac/Hennessy XO.png'),
+      drinkName: 'Hennessy XO',
+      category: 'Spirits',
+      subcategory: 'Brandy',
+      tertiary: 'Cognac',
+      drinkDescription:
+          'Hennessy XO stands as an emblem of luxury within the world of cognac, crafted with exceptional care and skill. It exhibits a deep and radiant amber hue, a result of its prolonged aging process.',
+      taste: [
+        '🍇 Fruit',
+        '🍫 Chocolate',
+        '🪵 Oak',
+      ]),
   Drink(
     drinkImage:
         const AssetImage('assets/Spirits/Tequila/Blanco/Casamigos Blanco.png'),
@@ -143,15 +161,20 @@ List<Drink> drinks = [
     drinkName: 'Sazerac',
     category: 'Cocktails',
     subcategory: 'brandy',
-    tertiary: '',
-    drinkDescription: '',
+    drinkDescription:
+        'The Sazerac is a classic cocktail originating from New Orleans. This cocktail is renowned for its smooth, rich flavors, often featuring a hint of anise from the absinthe rinse and a touch of sweetness.',
+    instructions: [
+      'In a mixing glass, muddle the sugar cube, water and the Peychaud’s bitters.',
+      'Add the brandy, fill the mixing glass with ice and stir 15­–20 seconds, until well-chilled.',
+      'Strain into the prepared glass.',
+      'Twist the lemon peel over the drink’s surface to express the peel’s oils, then garnish with the peel.'
+    ],
   ),
   Drink(
     drinkImage: const AssetImage('assets/Cocktails/Brandy/Sidecar.png'),
     drinkName: 'Sidecar',
     category: 'Cocktails',
     subcategory: 'brandy',
-    tertiary: '',
     drinkDescription: '',
   ),
   Drink(

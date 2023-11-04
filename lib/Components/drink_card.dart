@@ -1,3 +1,4 @@
+import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/screens/drink_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,13 +6,19 @@ import 'package:google_fonts/google_fonts.dart';
 class DrinkCard extends StatelessWidget {
   final AssetImage drinkImage;
   final String drinkName;
+  final String category;
   final String? drinkDescription;
+  final List? taste;
+  final List? instructions;
 
   const DrinkCard({
     Key? key,
     required this.drinkImage,
     required this.drinkName,
+    required this.category,
     this.drinkDescription,
+    this.taste,
+    this.instructions,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -20,9 +27,13 @@ class DrinkCard extends StatelessWidget {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => DrinkScreen(
-                drinkImage: drinkImage,
-                drinkName: drinkName,
-                drinkDescription: drinkDescription ?? ''),
+              drinkImage: drinkImage,
+              drinkName: drinkName,
+              category: category,
+              drinkDescription: drinkDescription ?? '',
+              taste: taste,
+              instructions: instructions,
+            ),
           ),
         );
       },

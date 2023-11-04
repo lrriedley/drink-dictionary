@@ -99,6 +99,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         child: DrinkCard(
                           drinkImage: drink.drinkImage,
                           drinkName: drink.drinkName,
+                          category: drink.category!,
+                          drinkDescription: drink.drinkDescription,
+                          instructions: drink.instructions,
                         ),
                       );
                     }).toList(),
@@ -110,7 +113,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     widget.category,
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: const Color.fromRGBO(255, 255, 255, 1),
                         fontSize: 20),
                   ),
                 ),

@@ -103,6 +103,9 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
                         child: DrinkCard(
                           drinkImage: drink.drinkImage,
                           drinkName: drink.drinkName,
+                          category: drink.category!,
+                          drinkDescription: drink.drinkDescription,
+                          instructions: drink.instructions,
                         ),
                       );
                     }).toList(),

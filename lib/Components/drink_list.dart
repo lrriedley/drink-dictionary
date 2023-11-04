@@ -5,12 +5,14 @@ import 'package:google_fonts/google_fonts.dart';
 class DrinkList extends StatelessWidget {
   final AssetImage drinkImage;
   final String drinkName;
+  final String? category;
   final String? drinkDescription;
 
   const DrinkList({
     Key? key,
     required this.drinkImage,
     required this.drinkName,
+    this.category,
     this.drinkDescription,
   }) : super(key: key);
   @override
@@ -22,6 +24,7 @@ class DrinkList extends StatelessWidget {
             builder: (context) => DrinkScreen(
                 drinkImage: drinkImage,
                 drinkName: drinkName,
+                category: category!,
                 drinkDescription: drinkDescription ?? ''),
           ),
         );

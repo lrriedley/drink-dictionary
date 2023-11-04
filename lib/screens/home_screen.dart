@@ -85,7 +85,10 @@ class HomeScreenState extends State<HomeScreen> {
                       child: DrinkCard(
                         drinkImage: drinkss.drinkImage,
                         drinkName: drinkss.drinkName,
+                        category: drinkss.category!,
                         drinkDescription: drinkss.drinkDescription,
+                        taste: drinkss.taste,
+                        instructions: drinkss.instructions,
                       ),
                     );
                   }).toList(),
@@ -110,6 +113,7 @@ class HomeScreenState extends State<HomeScreen> {
                       DrinkCard(
                         drinkImage: drink['drinkImage'],
                         drinkName: drink['drinkName'],
+                        category: drink['category'] ?? '',
                         drinkDescription: drink['drinkDescription'],
                       ),
                   ],

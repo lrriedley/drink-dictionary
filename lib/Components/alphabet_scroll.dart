@@ -1,4 +1,5 @@
 import 'package:azlistview/azlistview.dart';
+import 'package:drink_dictionary/drink_database.dart';
 import 'package:flutter/material.dart';
 import 'package:drink_dictionary/drinks.dart';
 import 'package:drink_dictionary/Components/drink_list.dart';
@@ -6,10 +7,12 @@ import 'package:drink_dictionary/Components/drink_list.dart';
 class AZItem extends ISuspensionBean {
   final String title;
   final String tag;
+  final String? category;
 
   AZItem({
     required this.title,
     required this.tag,
+    this.category,
   });
   @override
   String getSuspensionTag() => tag;
@@ -46,6 +49,7 @@ class _AlphabetScrollWidgetState extends State<AlphabetScrollWidget> {
     return DrinkList(
       drinkImage: drink.drinkImage,
       drinkName: drink.drinkName,
+      category: '',
     );
   }
 

@@ -1,3 +1,4 @@
+import 'package:drink_dictionary/drinks.dart';
 import 'package:drink_dictionary/screens/category_screen.dart';
 import 'package:drink_dictionary/screens/subcategory_screen.dart';
 import 'package:drink_dictionary/screens/drink_screen.dart';
@@ -33,15 +34,17 @@ class MainApp extends StatelessWidget {
             );
 
           case DrinkScreen.id:
-            final Map<String, dynamic> drinkData =
+            final Map<String, dynamic> drinks =
                 settings.arguments as Map<String, dynamic>;
-            final String drinkName = drinkData['name'];
-            final AssetImage drinkImage = drinkData['image'];
-            final String drinkDescription = drinkData['description'];
+            final String drinkName = drinks['name'];
+            final AssetImage drinkImage = drinks['image'];
+            final String drinkDescription = drinks['description'];
+            final String category = drinks['category'];
             return MaterialPageRoute(
               builder: (context) => DrinkScreen(
                   drinkName: drinkName,
                   drinkImage: drinkImage,
+                  category: category,
                   drinkDescription: drinkDescription),
             );
 
