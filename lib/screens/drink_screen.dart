@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:drink_dictionary/Components/drink_hashtag.dart';
+import 'package:drink_dictionary/components/description.dart';
+import 'package:drink_dictionary/components/spirit_analysis.dart';
 
 class DrinkScreen extends StatelessWidget {
   static const String id = '/drink_screen';
@@ -8,7 +9,9 @@ class DrinkScreen extends StatelessWidget {
   final String drinkName;
   final String category;
   final String drinkDescription;
+  final List? aroma;
   final List? taste;
+  final List? finish;
   final List? instructions;
 
   const DrinkScreen({
@@ -17,7 +20,9 @@ class DrinkScreen extends StatelessWidget {
     required this.drinkName,
     required this.category,
     required this.drinkDescription,
+    this.aroma,
     this.taste,
+    this.finish,
     this.instructions,
   }) : super(key: key);
 
@@ -58,104 +63,7 @@ class DrinkScreen extends StatelessWidget {
                 alignment: Alignment.topCenter,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8, bottom: 8),
-              child: Container(
-                padding: const EdgeInsets.all(
-                    1.0), // This padding determines the thickness of the gradient "border".
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      const Color.fromARGB(255, 255, 0, 234),
-                      Colors.white.withOpacity(0.6)
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF2C2C2C),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Description',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontFamily: 'Avenir',
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Text(
-                                    '4/5',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontFamily: 'Avenir',
-                                      fontWeight: FontWeight.w900,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 8.0),
-                          Text(
-                            drinkDescription,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontFamily: 'Avenir',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            Description(drinkDescription: drinkDescription),
             if (isCocktail)
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,38 +72,60 @@ class DrinkScreen extends StatelessWidget {
                   String item = entry.value;
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 6),
-                    child: Row(
+                    child: Column(
                       children: [
-                        Container(
-                          width: 20,
-                          height: 20,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                          ),
-                          child: Center(
-                            child: Text(
-                              '${index + 1}',
-                              style: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontFamily: 'Avenir',
-                                fontWeight: FontWeight.w900,
+                        Row(
+                          children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '${index + 1}',
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontFamily: 'Avenir',
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            item,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontFamily: 'Avenir',
-                              fontWeight: FontWeight.bold,
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                item,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontFamily: 'Avenir',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
-                          ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                                    width: double.infinity,
+                                    height: 1,
+                                    constraints: const BoxConstraints(
+                                      maxWidth: 350,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      gradient: const LinearGradient(
+                                        colors: [Color.fromARGB(122, 255, 255, 255), Colors.transparent],
+                                        begin: Alignment.center,
+                                        end: Alignment.centerRight,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                  ),
                         ),
                       ],
                     ),
@@ -203,13 +133,19 @@ class DrinkScreen extends StatelessWidget {
                 }).toList(),
               )
             else if (isSpirit)
-              Padding(
-                padding: const EdgeInsets.only(left: 6),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Aroma',
+            
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                 SpiritAnalysis(analysis: aroma, analysisName: 'Aroma',),
+                  SpiritAnalysis(analysis: taste, analysisName: 'Taste',),
+                  SpiritAnalysis(analysis: finish, analysisName: 'Finish',),
+                ],
+              )
+            else
+              const SizedBox.shrink(),
+          const Text(
+                      'pussy',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -217,17 +153,14 @@ class DrinkScreen extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    Row(
-                      children: (taste ?? []).map(drinkHashtag).toList(),
-                    ),
-                  ],
-                ),
-              )
-            else
-              const SizedBox.shrink(),
           ],
         ),
       ),
     );
   }
 }
+
+
+
+
+

@@ -1,4 +1,4 @@
-import 'package:drink_dictionary/drinks.dart';
+
 import 'package:drink_dictionary/screens/category_screen.dart';
 import 'package:drink_dictionary/screens/subcategory_screen.dart';
 import 'package:drink_dictionary/screens/drink_screen.dart';
@@ -40,6 +40,7 @@ class MainApp extends StatelessWidget {
             final AssetImage drinkImage = drinks['image'];
             final String drinkDescription = drinks['description'];
             final String category = drinks['category'];
+            
             return MaterialPageRoute(
               builder: (context) => DrinkScreen(
                   drinkName: drinkName,

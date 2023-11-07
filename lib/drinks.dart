@@ -3,21 +3,25 @@ import 'package:flutter/material.dart';
 class Drink {
   final String drinkName;
   final AssetImage drinkImage;
-  final String? category;
+  final String category;
   final String? subcategory;
   final String? tertiary;
   final String? drinkDescription;
   final List? taste;
+  final List? aroma;
+  final List? finish;
   final List? instructions;
 
   Drink({
     required this.drinkName,
     required this.drinkImage,
-    this.category,
+    required this.category,
     this.subcategory,
     this.tertiary,
     this.drinkDescription,
     this.taste,
+    this.aroma,
+    this.finish,
     this.instructions,
   });
 }
@@ -32,7 +36,13 @@ List<Drink> drinks = [
     tertiary: 'Bourbon',
     drinkDescription:
         'Bourbon with a bold, spicy character with a finish that\'s clean and smooth.',
+    aroma: [
+      '🥜 Nutmeg',
+      '🪵 Oak',
+      '🍁 Maple', '🌽 Sweet Corn', '🪵 Oak', '🍯 Honey'
+    ],
     taste: ['🪵 Oak', '🍁 Maple'],
+    finish: ['🪵 Oak', '🍁 Maple'],
   ),
   Drink(
     drinkImage:
@@ -43,6 +53,9 @@ List<Drink> drinks = [
     tertiary: 'Bourbon',
     drinkDescription:
         'A renowned single barrel bourbon that boasts a palate of caramel, vanilla, honey, and a subtle hint of citrus, making it a cherished gem among bourbon enthusiasts.',
+    aroma: ['🌽 Sweet Corn', '🪵 Oak', '🍯 Honey',],
+    taste: ['🪵 Oak', '🍊 Citrus', '🍯 Honey',],
+    finish: ['🪵 Oak', '🍁 Maple'],
   ),
   Drink(
       drinkImage:
@@ -53,7 +66,10 @@ List<Drink> drinks = [
       tertiary: 'Bourbon',
       drinkDescription:
           'A historic bourbon known for its rich and complex flavor profile. Buffalo Trace offers a delightful combination of caramel, toffee, and a touch of fruitiness.',
-      taste: ['🍦 Vanilla', '🌿 Mint']),
+      aroma: ['🍊 Citrus', '🪵 Oak', '🍯 Honey'],
+      taste: ['🍦 Vanilla', '🌿 Mint'],
+      finish: ['🪵 Oak', '🍁 Maple'],
+      ),
   Drink(
     drinkImage:
         const AssetImage('assets/Spirits/Whiskey/Bourbon/Woodford Reserve.png'),
@@ -62,6 +78,9 @@ List<Drink> drinks = [
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription: 'A classic, well-balanced bourbon.',
+    aroma: ['🍊 Citrus', '🪵 Oak', '🍯 Honey'],
+      taste: ['🍦 Vanilla', '🌿 Mint'],
+      finish: ['🪵 Oak', '🍁 Maple'],
   ),
   Drink(
     drinkImage: const AssetImage('assets/Spirits/Whiskey/Bourbon/Jim Beam.png'),
@@ -70,7 +89,9 @@ List<Drink> drinks = [
     subcategory: 'Whiskey',
     tertiary: 'Bourbon',
     drinkDescription:
-        'Classic American whiskey known for its smooth and mellow flavor with hints of caramel and vanilla.',
+        'Classic American whiskey known for its smooth and mellow flavor with hints of caramel and vanilla.',aroma: ['🍊 Citrus', '🪵 Oak', '🍯 Honey'],
+      taste: ['🍦 Vanilla', '🌿 Mint'],
+      finish: ['🪵 Oak', '🍁 Maple'],
   ),
   Drink(
     drinkImage:
@@ -81,6 +102,9 @@ List<Drink> drinks = [
     tertiary: 'Bourbon',
     drinkDescription:
         'A full-bodied bourbon whiskey known for its rich, sweet, and robust flavor profile, featuring notes of caramel, toasted oak, and a long, warming finish. It\'s aged for a minimum of nine years, resulting in a deep and complex bourbon experience.',
+  aroma: ['🍊 Citrus', '🪵 Oak', '🍯 Honey'],
+      taste: ['🍦 Vanilla', '🌿 Mint'],
+      finish: ['🪵 Oak', '🍁 Maple'],
   ),
   Drink(
     drinkImage:
@@ -91,6 +115,9 @@ List<Drink> drinks = [
     tertiary: 'Bourbon',
     drinkDescription:
         'A historic bourbon brand renowned for its smooth and balanced flavor profile, marked by notes of caramel, vanilla, and a hint of spice, making it a classic choice for bourbon enthusiasts.',
+  aroma: ['🍊 Citrus', '🪵 Oak', '🍯 Honey'],
+      taste: ['🍦 Vanilla', '🌿 Mint'],
+      finish: ['🪵 Oak', '🍁 Maple'],
   ),
   Drink(
       drinkImage: const AssetImage(
@@ -101,7 +128,10 @@ List<Drink> drinks = [
       tertiary: 'Irish Whiskey',
       drinkDescription:
           'Proper No. Twelve Irish Whiskey is a triple-distilled blend of fine grain and single malt that is bourbon-barrel-aged for 4 years.',
-      taste: ['🍦 Vanilla', '🍯 Honey', '🌾 Barley', '🪵 Oak']),
+      aroma: ['🍊 Citrus', '🪵 Oak', '🍯 Honey'],
+      taste: ['🍦 Vanilla', '🍯 Honey', '🌾 Barley', '🪵 Oak'],
+      finish: ['🪵 Oak', '🍁 Maple'],
+      ),
   Drink(
       drinkImage: const AssetImage(
           'assets/Spirits/Whiskey/Irish Whiskey/Tullamore D.E.W..png'),

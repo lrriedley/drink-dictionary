@@ -1,12 +1,12 @@
-import 'package:drink_dictionary/Components/search_bar.dart';
+import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/components/subcategory_button.dart';
 import 'package:drink_dictionary/drinks.dart';
-import 'package:drink_dictionary/Components/drink_card.dart';
-import 'package:drink_dictionary/Components/alphabet_scroll.dart';
+import 'package:drink_dictionary/components/drink_card.dart';
+import 'package:drink_dictionary/components/alphabet_scroll.dart';
 
 class CategoryScreen extends StatefulWidget {
   static const String id = 'category_screen';
@@ -47,6 +47,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.black.withOpacity(0.7),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
             title: Text(
               widget.category,
               style: GoogleFonts.poppins(
@@ -56,6 +60,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
+            ),
+            flexibleSpace: Image(
+              image: AssetImage('assets/Drink Category Photos/${widget.category}/${widget.category}.png'),
+              fit: BoxFit.cover,
             ),
           ),
           body: SingleChildScrollView(
@@ -99,9 +107,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         child: DrinkCard(
                           drinkImage: drink.drinkImage,
                           drinkName: drink.drinkName,
-                          category: drink.category!,
+                          category: drink.category,
                           drinkDescription: drink.drinkDescription,
                           instructions: drink.instructions,
+                          aroma: drink.aroma,
+                          taste: drink.taste,
+                          finish: drink.finish,
                         ),
                       );
                     }).toList(),

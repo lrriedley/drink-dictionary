@@ -1,10 +1,10 @@
-import 'package:drink_dictionary/Components/tab_bar.dart';
+import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
-import 'package:drink_dictionary/Components/category_button.dart';
-import 'package:drink_dictionary/Components/drink_card.dart';
-import 'package:drink_dictionary/Components/search_bar.dart';
+import 'package:drink_dictionary/components/category_button.dart';
+import 'package:drink_dictionary/components/drink_card.dart';
+import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/drinks.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -85,9 +85,11 @@ class HomeScreenState extends State<HomeScreen> {
                       child: DrinkCard(
                         drinkImage: drinkss.drinkImage,
                         drinkName: drinkss.drinkName,
-                        category: drinkss.category!,
+                        category: drinkss.category,
                         drinkDescription: drinkss.drinkDescription,
+                        aroma: drinkss.aroma,
                         taste: drinkss.taste,
+                        finish: drinkss.finish,
                         instructions: drinkss.instructions,
                       ),
                     );
@@ -115,6 +117,7 @@ class HomeScreenState extends State<HomeScreen> {
                         drinkName: drink['drinkName'],
                         category: drink['category'] ?? '',
                         drinkDescription: drink['drinkDescription'],
+                        taste: drink['taste'],
                       ),
                   ],
                 ),

@@ -1,4 +1,3 @@
-import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/screens/drink_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +7,9 @@ class DrinkCard extends StatelessWidget {
   final String drinkName;
   final String category;
   final String? drinkDescription;
+  final List? aroma;
   final List? taste;
+  final List? finish;
   final List? instructions;
 
   const DrinkCard({
@@ -17,7 +18,9 @@ class DrinkCard extends StatelessWidget {
     required this.drinkName,
     required this.category,
     this.drinkDescription,
+    this.aroma,
     this.taste,
+    this.finish,
     this.instructions,
   }) : super(key: key);
   @override
@@ -31,7 +34,9 @@ class DrinkCard extends StatelessWidget {
               drinkName: drinkName,
               category: category,
               drinkDescription: drinkDescription ?? '',
+              aroma: aroma,
               taste: taste,
+              finish: finish,
               instructions: instructions,
             ),
           ),

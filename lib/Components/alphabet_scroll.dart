@@ -1,18 +1,17 @@
 import 'package:azlistview/azlistview.dart';
-import 'package:drink_dictionary/drink_database.dart';
 import 'package:flutter/material.dart';
 import 'package:drink_dictionary/drinks.dart';
-import 'package:drink_dictionary/Components/drink_list.dart';
+import 'package:drink_dictionary/components/drink_list.dart';
 
 class AZItem extends ISuspensionBean {
   final String title;
   final String tag;
-  final String? category;
+  final String category;
 
   AZItem({
     required this.title,
     required this.tag,
-    this.category,
+    required this.category,
   });
   @override
   String getSuspensionTag() => tag;
@@ -41,7 +40,7 @@ class _AlphabetScrollWidgetState extends State<AlphabetScrollWidget> {
 
   void initList(List<Drink> drinks) {
     items = drinks
-        .map((drink) => AZItem(title: drink.drinkName, tag: drink.drinkName[0]))
+        .map((drink) => AZItem(title: drink.drinkName, tag: drink.drinkName[0], category: drink.drinkName))
         .toList();
   }
 
@@ -49,16 +48,23 @@ class _AlphabetScrollWidgetState extends State<AlphabetScrollWidget> {
     return DrinkList(
       drinkImage: drink.drinkImage,
       drinkName: drink.drinkName,
-      category: '',
+      category: drink.category,
+      drinkDescription: drink.drinkDescription,
+      aroma: drink.aroma,
+      taste: drink.taste,
+    finish: drink.finish,
+      instructions: drink.instructions,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return AzListView(
+      
         padding: const EdgeInsets.all(16),
         data: items,
         itemCount: items.length,
+        hapticFeedback: true,
         itemBuilder: (context, index) {
           final drink = widget.items[index];
           return buildList(drink);

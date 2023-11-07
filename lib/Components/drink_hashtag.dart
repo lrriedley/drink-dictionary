@@ -19,7 +19,7 @@ Widget drinkHashtag(item) {
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: const Color(0xFF2C2C2C),
+          color: Color.fromARGB(255, 31, 31, 31),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
