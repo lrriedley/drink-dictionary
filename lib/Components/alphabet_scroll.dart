@@ -18,19 +18,16 @@ class AZItem extends ISuspensionBean {
 }
 
 class AlphabetScrollWidget extends StatefulWidget {
-  final List<Drink> items;
+  final List<Drink> items; // Define the 'items' property here
 
-  const AlphabetScrollWidget({
-    Key? key,
-    required this.items,
-  }) : super(key: key);
+  const AlphabetScrollWidget({Key? key, required this.items}) : super(key: key);
 
   @override
-  State<AlphabetScrollWidget> createState() => _AlphabetScrollWidgetState();
+  AlphabetScrollWidgetState createState() => AlphabetScrollWidgetState();
 }
 
-class _AlphabetScrollWidgetState extends State<AlphabetScrollWidget> {
-  late List<AZItem> items = [];
+class AlphabetScrollWidgetState extends State<AlphabetScrollWidget> {
+  late List<AZItem> azItems = [];
 
   @override
   void initState() {
@@ -39,7 +36,7 @@ class _AlphabetScrollWidgetState extends State<AlphabetScrollWidget> {
   }
 
   void initList(List<Drink> drinks) {
-    items = drinks
+    azItems = drinks
         .map((drink) => AZItem(title: drink.drinkName, tag: drink.drinkName[0], category: drink.drinkName))
         .toList();
   }
@@ -52,22 +49,36 @@ class _AlphabetScrollWidgetState extends State<AlphabetScrollWidget> {
       drinkDescription: drink.drinkDescription,
       aroma: drink.aroma,
       taste: drink.taste,
-    finish: drink.finish,
+      finish: drink.finish,
       instructions: drink.instructions,
     );
+  }
+
+  void updateAlphabetList(String query) {
+    final suggestions = widget.items.where((drink) {
+      final name = drink.drinkName.toLowerCase();
+      final input = query.toLowerCase();
+      return name.contains(input);
+    }).toList();
+
+    setState(() {
+      azItems = suggestions
+          .map((drink) => AZItem(title: drink.drinkName, tag: drink.drinkName[0], category: drink.drinkName))
+          .toList();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return AzListView(
-      
-        padding: const EdgeInsets.all(16),
-        data: items,
-        itemCount: items.length,
-        hapticFeedback: true,
-        itemBuilder: (context, index) {
-          final drink = widget.items[index];
-          return buildList(drink);
-        });
+      padding: const EdgeInsets.all(16),
+      data: azItems,
+      itemCount: azItems.length,
+      hapticFeedback: true,
+      itemBuilder: (context, index) {
+        final drink = widget.items.firstWhere((item) => item.drinkName == azItems[index].title);
+        return buildList(drink);
+      },
+    );
   }
 }

@@ -62,22 +62,25 @@ class DrinkList extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(4,0,0,8),
-                child: Text(
-                  drinkName,
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+              Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(4,0,0,0),
+                  child: Text(
+                    drinkName,
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
+                    
                   ),
-                  textAlign: TextAlign.start,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(4,0,0,8),
+                padding: const EdgeInsets.fromLTRB(4,0,0,4),
                 child: Container(
                   width: 280,
                   child: Text(
@@ -93,7 +96,7 @@ class DrinkList extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(4,0,0,5.0),
+                padding: const EdgeInsets.fromLTRB(4,0,0,5),
                 child: Container(
                           width: 285,
                           height: 1,
@@ -102,7 +105,7 @@ class DrinkList extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color.fromARGB(227, 255, 255, 255), Colors.transparent],
+                  colors: [Color.fromARGB(255, 255, 0, 225), Colors.transparent],
                   begin: Alignment.center,
                   end: Alignment.centerRight,
                 ),

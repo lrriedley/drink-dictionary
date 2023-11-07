@@ -47,3 +47,26 @@
 //   });
 //   return flattenedList;
 // }
+
+
+
+// shows search results in a row
+// SingleChildScrollView(
+//                   scrollDirection: Axis.horizontal,
+//                   child: Row(
+//                     children: drink.map((drink) {
+//                       return SizedBox(
+//                         child: DrinkCard(
+//                           drinkImage: drink.drinkImage,
+//                           drinkName: drink.drinkName,
+//                           category: drink.category,
+//                           drinkDescription: drink.drinkDescription,
+//                           instructions: drink.instructions,
+//                           aroma: drink.aroma,
+//                           taste: drink.taste,
+//                           finish: drink.finish,
+//                         ),
+//                       );
+//                     }).toList(),
+//                   ),
+//                 ),
