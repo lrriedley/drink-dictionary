@@ -105,7 +105,7 @@ class DrinkList extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color.fromARGB(255, 255, 0, 225), Colors.transparent],
+                  colors: [Colors.white, Colors.transparent],
                   begin: Alignment.center,
                   end: Alignment.centerRight,
                 ),
