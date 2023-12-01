@@ -18,7 +18,10 @@ class AZItem extends ISuspensionBean {
 }
 
 class AlphabetScrollWidget extends StatefulWidget {
-  final List<Drink> items; 
+
+
+  final List<Drink> items; // Define the 'items' property here
+
 
   const AlphabetScrollWidget({Key? key, required this.items}) : super(key: key);
 
