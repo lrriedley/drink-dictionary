@@ -19,14 +19,13 @@ class SubcategoryScreen extends StatefulWidget {
 }
 
 class _SubcategoryScreenState extends State<SubcategoryScreen> {
-  List<Drink> drink = [];
+  late List<Drink> drink;
+  final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
 
   @override
   void initState() {
     super.initState();
-    drink = drinks
-        .where((drink) => drink.subcategory == widget.subcategory)
-        .toList();
+    drink = drinks.where((drink) => drink.subcategory == widget.subcategory).toList();
   }
 
   void searchDrink(String query) {
@@ -35,9 +34,10 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
       final input = query.toLowerCase();
       return name.contains(input);
     }).toList();
-    setState(() => drink = suggestions
-        .where((drink) => drink.subcategory == widget.subcategory)
-        .toList());
+    setState(() {
+      drink = suggestions.where((drink) => drink.subcategory == widget.subcategory).toList();
+      alphabetScrollKey.currentState?.updateAlphabetList(query);
+    });
   }
 
   @override
@@ -90,35 +90,7 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
                         [],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
-                  child: Text(
-                    'Results',
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: drink.map((drink) {
-                      return SizedBox(
-                        child: DrinkCard(
-                          drinkImage: drink.drinkImage,
-                          drinkName: drink.drinkName,
-                          category: drink.category,
-                          drinkDescription: drink.drinkDescription,
-                          instructions: drink.instructions,
-                          aroma: drink.aroma,
-                          taste: drink.taste,
-                          finish: drink.finish,
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
+                
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
                   child: Text(
@@ -130,11 +102,10 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 500,
+                  height: 552,
                   child: AlphabetScrollWidget(
-                    items: drinks
-                        .where((drink) => drink.subcategory == widget.subcategory)
-                        .toList(),
+                    key: alphabetScrollKey,
+                    items: drink,
                   ),
                 ),
               ],

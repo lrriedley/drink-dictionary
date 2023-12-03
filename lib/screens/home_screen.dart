@@ -6,6 +6,7 @@ import 'package:drink_dictionary/components/category_button.dart';
 import 'package:drink_dictionary/components/drink_card.dart';
 import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/drinks.dart';
+import 'package:drink_dictionary/components/alphabet_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -16,17 +17,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
-  List<Drink> drink = drinks;
+  List<Drink> drink = [];
+  final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
   final controller = TextEditingController();
 
+    @override
+  void initState() {
+    super.initState();
+    drink = drinks.toList();
+  }
+
   void searchDrink(String query) {
-    final suggestions = drinks.where((drinkss) {
-      final name = drinkss.drinkName.toLowerCase();
+    final suggestions = drinks.where((drink) {
+      final name = drink.drinkName.toLowerCase();
       final input = query.toLowerCase();
       return name.contains(input);
     }).toList();
-    setState(() => drink = suggestions);
+    setState(() {
+      drink = suggestions.toList();
+      alphabetScrollKey.currentState?.updateAlphabetList(query);
+    });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -67,61 +79,50 @@ class HomeScreenState extends State<HomeScreen> {
                   }).toList(),
                 ),
               ),
+              
+              // Padding(
+              //   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
+              //   child: Text(
+              //     'Bourbon',
+              //     style: GoogleFonts.poppins(
+              //         fontWeight: FontWeight.bold,
+              //         color: Colors.white,
+              //         fontSize: 20),
+              //   ),
+              // ),
+              // SingleChildScrollView(
+              //   scrollDirection: Axis.horizontal,
+              //   child: Row(
+              //     children: [
+              //       for (var drink in drinkData['Spirits']['Whiskey']
+              //           ['Bourbon'])
+              //         DrinkCard(
+              //           drinkImage: drink['drinkImage'],
+              //           drinkName: drink['drinkName'],
+              //           category: drink['category'] ?? '',
+              //           drinkDescription: drink['drinkDescription'],
+              //           taste: drink['taste'],
+              //         ),
+              //     ],
+              //   ),
+              // ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
-                child: Text(
-                  'Results',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20),
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Text(
+                    'All Drinks',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromRGBO(255, 255, 255, 1),
+                        fontSize: 20),
+                  ),
                 ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: drink.map((drinkss) {
-                    return SizedBox(
-                      child: DrinkCard(
-                        drinkImage: drinkss.drinkImage,
-                        drinkName: drinkss.drinkName,
-                        category: drinkss.category,
-                        drinkDescription: drinkss.drinkDescription,
-                        aroma: drinkss.aroma,
-                        taste: drinkss.taste,
-                        finish: drinkss.finish,
-                        instructions: drinkss.instructions,
-                      ),
-                    );
-                  }).toList(),
+                SizedBox(
+                  height: 552,
+                  child: AlphabetScrollWidget(
+                              key: alphabetScrollKey,
+                              items: drink,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
-                child: Text(
-                  'Bourbon',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20),
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    for (var drink in drinkData['Spirits']['Whiskey']
-                        ['Bourbon'])
-                      DrinkCard(
-                        drinkImage: drink['drinkImage'],
-                        drinkName: drink['drinkName'],
-                        category: drink['category'] ?? '',
-                        drinkDescription: drink['drinkDescription'],
-                        taste: drink['taste'],
-                      ),
-                  ],
-                ),
-              ),
             ],
           ),
           bottomNavigationBar: const NewTabBar(),

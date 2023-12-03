@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drink_database.dart';
 import 'package:drink_dictionary/components/subcategory_button.dart';
 import 'package:drink_dictionary/drinks.dart';
-import 'package:drink_dictionary/components/drink_card.dart';
 import 'package:drink_dictionary/components/alphabet_scroll.dart';
 
 class CategoryScreen extends StatefulWidget {

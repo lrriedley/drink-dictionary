@@ -17,12 +17,15 @@ class TertiaryScreen extends StatefulWidget {
 }
 
 class _TertiaryScreenState extends State<TertiaryScreen> {
-  List<Drink> drink = [];
+ late List<Drink> drink;
+final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
 
   @override
   void initState() {
     super.initState();
-    drink = drinks.where((drink) => drink.tertiary == widget.tertiary).toList();
+    drink = drinks
+    .where((drink) => drink.tertiary == widget.tertiary)
+    .toList();
   }
 
   void searchDrink(String query) {
@@ -31,9 +34,10 @@ class _TertiaryScreenState extends State<TertiaryScreen> {
       final input = query.toLowerCase();
       return name.contains(input);
     }).toList();
-    setState(() => drink = suggestions
-        .where((drink) => drink.tertiary == widget.tertiary)
-        .toList());
+    setState(() {
+      drink = suggestions.where((drink) => drink.tertiary == widget.tertiary).toList();
+      alphabetScrollKey.currentState?.updateAlphabetList(query);
+    });
   }
 
   @override
@@ -69,35 +73,7 @@ class _TertiaryScreenState extends State<TertiaryScreen> {
                   searchText:
                       'Search for your favorite ${widget.tertiary.toLowerCase()}',
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
-                  child: Text(
-                    'Results',
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: drink.map((drink) {
-                      return SizedBox(
-                        child: DrinkCard(
-                          drinkImage: drink.drinkImage,
-                          drinkName: drink.drinkName,
-                          category: drink.category,
-                          drinkDescription: drink.drinkDescription,
-                          instructions: drink.instructions,
-                          aroma: drink.aroma,
-                          taste: drink.taste,
-                          finish: drink.finish,
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
+                
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
                   child: Text(
@@ -109,11 +85,10 @@ class _TertiaryScreenState extends State<TertiaryScreen> {
                   ),
                 ),
                SizedBox(
-                  height: 500,
+                  height: 660,
                   child: AlphabetScrollWidget(
-                    items: drinks
-                        .where((drink) => drink.tertiary == widget.tertiary)
-                        .toList(),
+                    key: alphabetScrollKey,
+                    items: drink,
                   ),
                 ),
               ],
