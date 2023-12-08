@@ -110,9 +110,10 @@ final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
                 SizedBox(
                   height: 550,
                   child: AlphabetScrollWidget(
-                  key: alphabetScrollKey,
-                  items: drink,
-                ),),
+                    key: alphabetScrollKey,
+                    items: drink,
+                ),
+                ),
               ],
             ),
           ),

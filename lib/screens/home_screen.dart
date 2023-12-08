@@ -60,70 +60,72 @@ class HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              CustomSearchBar(
-                onChanged: searchDrink,
-                searchText: 'Search for your favorite drink',
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: category.keys.map((categoryName) {
-                    final categoryData = category[categoryName]![0];
-                    return CategoryButton(
-                      categoryName: categoryName,
-                      image: categoryData['categoryImage'] as AssetImage,
-                    );
-                  }).toList(),
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                CustomSearchBar(
+                  onChanged: searchDrink,
+                  searchText: 'Search for your favorite drink',
                 ),
-              ),
-              
-              // Padding(
-              //   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
-              //   child: Text(
-              //     'Bourbon',
-              //     style: GoogleFonts.poppins(
-              //         fontWeight: FontWeight.bold,
-              //         color: Colors.white,
-              //         fontSize: 20),
-              //   ),
-              // ),
-              // SingleChildScrollView(
-              //   scrollDirection: Axis.horizontal,
-              //   child: Row(
-              //     children: [
-              //       for (var drink in drinkData['Spirits']['Whiskey']
-              //           ['Bourbon'])
-              //         DrinkCard(
-              //           drinkImage: drink['drinkImage'],
-              //           drinkName: drink['drinkName'],
-              //           category: drink['category'] ?? '',
-              //           drinkDescription: drink['drinkDescription'],
-              //           taste: drink['taste'],
-              //         ),
-              //     ],
-              //   ),
-              // ),
-              Padding(
-                  padding: const EdgeInsets.only(left: 8),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: category.keys.map((categoryName) {
+                      final categoryData = category[categoryName]![0];
+                      return CategoryButton(
+                        categoryName: categoryName,
+                        image: categoryData['categoryImage'] as AssetImage,
+                      );
+                    }).toList(),
+                  ),
+                ),
+                
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
                   child: Text(
-                    'All Drinks',
+                    'Bourbon',
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
-                        color: const Color.fromRGBO(255, 255, 255, 1),
+                        color: Colors.white,
                         fontSize: 20),
                   ),
                 ),
-                SizedBox(
-                  height: 552,
-                  child: AlphabetScrollWidget(
-                              key: alphabetScrollKey,
-                              items: drink,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      for (var drink in drinkData['Spirits']['Whiskey']
+                          ['Bourbon'])
+                        DrinkCard(
+                          drinkImage: drink['drinkImage'],
+                          drinkName: drink['drinkName'],
+                          category: drink['category'] ?? '',
+                          drinkDescription: drink['drinkDescription'],
+                          taste: drink['taste'],
+                        ),
+                    ],
                   ),
                 ),
-            ],
+                Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      'All Drinks',
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.bold,
+                          color: const Color.fromRGBO(255, 255, 255, 1),
+                          fontSize: 20),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 600,
+                    child: AlphabetScrollWidget(
+                                key: alphabetScrollKey,
+                                items: drink,
+                    ),
+                  ),
+              ],
+            ),
           ),
           bottomNavigationBar: const NewTabBar(),
         ),
@@ -131,3 +133,4 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+

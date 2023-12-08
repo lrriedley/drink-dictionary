@@ -81,7 +81,7 @@ class DrinkList extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(4,0,0,4),
-                child: Container(
+                child: SizedBox(
                   width: 280,
                   child: Text(
                     drinkDescription!,
