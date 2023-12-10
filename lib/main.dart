@@ -4,6 +4,7 @@ import 'package:drink_dictionary/screens/subcategory_screen.dart';
 import 'package:drink_dictionary/screens/drink_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
+import 'screens/auth.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,9 +16,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: HomeScreen.id,
+      initialRoute: AuthScreen.id,
       routes: {
         HomeScreen.id: (context) => const HomeScreen(),
+        AuthScreen.id: (context) => const AuthScreen(),
       },
       onGenerateRoute: (settings) {
         switch (settings.name) {
