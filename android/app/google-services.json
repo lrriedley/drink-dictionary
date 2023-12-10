@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "881505599284",
+    "project_id": "drink-dictionary-32c46",
+    "storage_bucket": "drink-dictionary-32c46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881505599284:android:cd2204ee7f8cd5efaa2f61",
+        "android_client_info": {
+          "package_name": "com.example.drink_dictionary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB4SQTBKqnOgcuMg7vD5_Sgfxf5kaE5zE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
