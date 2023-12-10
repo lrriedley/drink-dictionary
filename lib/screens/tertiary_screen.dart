@@ -3,7 +3,6 @@ import 'package:drink_dictionary/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drink_dictionary/drinks.dart';
-import 'package:drink_dictionary/components/drink_card.dart';
 import 'package:drink_dictionary/components/alphabet_scroll.dart';
 
 class TertiaryScreen extends StatefulWidget {
