@@ -15,7 +15,7 @@ class DrinkScreen extends StatelessWidget {
   final List? instructions;
 
   const DrinkScreen({
-    Key? key,
+    super.key,
     required this.drinkImage,
     required this.drinkName,
     required this.category,
@@ -24,7 +24,7 @@ class DrinkScreen extends StatelessWidget {
     this.taste,
     this.finish,
     this.instructions,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

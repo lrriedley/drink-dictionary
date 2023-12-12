@@ -13,7 +13,7 @@ class DrinkCard extends StatelessWidget {
   final List? instructions;
 
   const DrinkCard({
-    Key? key,
+    super.key,
     required this.drinkImage,
     required this.drinkName,
     required this.category,
@@ -22,7 +22,7 @@ class DrinkCard extends StatelessWidget {
     this.taste,
     this.finish,
     this.instructions,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

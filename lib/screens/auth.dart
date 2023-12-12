@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+final _firebase = FirebaseAuth.instance;
 
 class AuthScreen extends StatefulWidget {
   static const String id = 'auth_screen';
@@ -16,12 +19,30 @@ class _AuthScreenState extends State<AuthScreen> {
   var _enteredPassword = '';
   final _form = GlobalKey<FormState>();
 
-  void _submit() {
+  void _submit() async {
     final isValid = _form.currentState!.validate();
-    if (isValid) {
-      _form.currentState!.save();
-      print(_enteredEmail);
-      print(_enteredPassword);
+    if (!isValid) {
+      return;
+    }
+    _form.currentState!.save();
+    if (_isLogin) {
+      //log users in
+    } else {
+      try {
+        final userCredentials = await _firebase.createUserWithEmailAndPassword(
+            email: _enteredEmail, password: _enteredPassword);
+        print(userCredentials);
+      } on FirebaseAuthException catch (error) {
+        if (error.code == 'email-already-in-use') {
+          //..
+        }
+        ScaffoldMessenger.of(context).clearSnackBars();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(error.message ?? 'Authentication failed'),
+          ),
+        );
+      }
     }
   }
 
@@ -74,21 +95,24 @@ class _AuthScreenState extends State<AuthScreen> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             TextFormField(
-                              decoration: const InputDecoration(
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color.fromARGB(255, 255, 0, 225),
-                                    ),
-                                  ),
-                                  labelText: 'Email Address',
-                                  labelStyle: TextStyle(
+                              decoration: InputDecoration(
+                                enabledBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
                                     color: Colors.white,
-                                  )),
+                                  ),
+                                ),
+                                focusedBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 0, 225),
+                                  ),
+                                ),
+                                labelText: 'Email Address',
+                                labelStyle: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
                               keyboardType: TextInputType.emailAddress,
                               autocorrect: false,
                               textCapitalization: TextCapitalization.none,
@@ -135,8 +159,10 @@ class _AuthScreenState extends State<AuthScreen> {
                                   ),
                                 ),
                                 labelText: 'Password',
-                                labelStyle: const TextStyle(
-                                  color: Colors.white,
+                                labelStyle: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                               obscureText: obscure,
@@ -157,7 +183,6 @@ class _AuthScreenState extends State<AuthScreen> {
                                 _enteredPassword = value!;
                               },
                             ),
-                          
                           ],
                         ),
                       ),

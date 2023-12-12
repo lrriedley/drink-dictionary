@@ -23,7 +23,7 @@ class AlphabetScrollWidget extends StatefulWidget {
   final List<Drink> items; // Define the 'items' property here
 
 
-  const AlphabetScrollWidget({Key? key, required this.items}) : super(key: key);
+  const AlphabetScrollWidget({super.key, required this.items});
 
   @override
   AlphabetScrollWidgetState createState() => AlphabetScrollWidgetState();
