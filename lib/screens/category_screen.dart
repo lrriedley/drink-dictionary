@@ -11,24 +11,24 @@ class CategoryScreen extends StatefulWidget {
   static const String id = 'category_screen';
   final String category;
 
-
-  const CategoryScreen({super.key, required this.category,});
+  const CategoryScreen({
+    super.key,
+    required this.category,
+  });
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
- late List<Drink> drink;
-final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
-
+  late List<Drink> drink;
+  final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
 
   @override
   void initState() {
     super.initState();
     drink = drinks.where((drink) => drink.category == widget.category).toList();
   }
-
 
   void searchDrink(String query) {
     final suggestions = drinks.where((drink) {
@@ -37,13 +37,12 @@ final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
       return name.contains(input);
     }).toList();
     setState(() {
-      drink = suggestions.where((drink) => drink.category == widget.category).toList();
+      drink = suggestions
+          .where((drink) => drink.category == widget.category)
+          .toList();
       alphabetScrollKey.currentState?.updateAlphabetList(query);
     });
   }
-
- 
-
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +54,8 @@ final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
           appBar: AppBar(
             backgroundColor: Colors.black.withOpacity(0.7),
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+              icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                  color: Colors.white),
               onPressed: () => Navigator.of(context).pop(),
             ),
             title: Text(
@@ -69,7 +69,8 @@ final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
               ),
             ),
             flexibleSpace: Image(
-              image: AssetImage('assets/Drink Category Photos/${widget.category}/${widget.category}.png'),
+              image: AssetImage(
+                  'assets/Drink Category Photos/${widget.category}/${widget.category}.png'),
               fit: BoxFit.cover,
             ),
           ),
@@ -96,7 +97,7 @@ final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
                         [],
                   ),
                 ),
-               Padding(
+                Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(
                     widget.category,
@@ -111,7 +112,7 @@ final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
                   child: AlphabetScrollWidget(
                     key: alphabetScrollKey,
                     items: drink,
-                ),
+                  ),
                 ),
               ],
             ),

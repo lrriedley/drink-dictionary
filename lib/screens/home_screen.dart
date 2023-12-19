@@ -7,6 +7,7 @@ import 'package:drink_dictionary/components/drink_card.dart';
 import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/drinks.dart';
 import 'package:drink_dictionary/components/alphabet_scroll.dart';
+import 'package:drink_dictionary/Components/side_menu.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -21,7 +22,7 @@ class HomeScreenState extends State<HomeScreen> {
   final GlobalKey<AlphabetScrollWidgetState> alphabetScrollKey = GlobalKey();
   final controller = TextEditingController();
 
-    @override
+  @override
   void initState() {
     super.initState();
     drink = drinks.toList();
@@ -38,7 +39,6 @@ class HomeScreenState extends State<HomeScreen> {
       alphabetScrollKey.currentState?.updateAlphabetList(query);
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +58,16 @@ class HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
+            ),
+            leading: Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                );
+              },
             ),
           ),
           body: SingleChildScrollView(
@@ -80,7 +90,6 @@ class HomeScreenState extends State<HomeScreen> {
                     }).toList(),
                   ),
                 ),
-                
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, .5, .5, .5),
                   child: Text(
@@ -108,29 +117,29 @@ class HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: Text(
-                      'All Drinks',
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.bold,
-                          color: const Color.fromRGBO(255, 255, 255, 1),
-                          fontSize: 20),
-                    ),
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Text(
+                    'All Drinks',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromRGBO(255, 255, 255, 1),
+                        fontSize: 20),
                   ),
-                  SizedBox(
-                    height: 600,
-                    child: AlphabetScrollWidget(
-                                key: alphabetScrollKey,
-                                items: drink,
-                    ),
+                ),
+                SizedBox(
+                  height: 600,
+                  child: AlphabetScrollWidget(
+                    key: alphabetScrollKey,
+                    items: drink,
                   ),
+                ),
               ],
             ),
           ),
+          drawer: const SideMenu(),
           bottomNavigationBar: const NewTabBar(),
         ),
       ),
     );
   }
 }
-
