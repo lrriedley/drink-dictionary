@@ -63,7 +63,7 @@ class DrinkList extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(4, 8, 0, 0),
                   child: Text(
                     drinkName,
                     style: GoogleFonts.poppins(

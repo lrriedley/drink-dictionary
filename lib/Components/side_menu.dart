@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -16,8 +17,22 @@ class SideMenu extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.black.withOpacity(.8),
             ),
-            accountName: const Text('John Doe'),
-            accountEmail: const Text('john.doe@example.com'),
+            accountName: Text(
+              'John Doe',
+              style: GoogleFonts.poppins(
+                textStyle: const TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            accountEmail: Text(
+              'john.doe@example.com',
+              style: GoogleFonts.poppins(
+                textStyle: const TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
             currentAccountPicture: const CircleAvatar(
               backgroundColor: Colors.white,
               child: CircleAvatar(
@@ -60,7 +75,15 @@ class SideMenu extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: const Text('Log Out'),
+              child: Text(
+                'Log Out',
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
           ),
         ],

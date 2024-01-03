@@ -112,20 +112,23 @@ class DrinkScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                                    width: double.infinity,
-                                    height: 1,
-                                    constraints: const BoxConstraints(
-                                      maxWidth: 350,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      gradient: const LinearGradient(
-                                        colors: [Color.fromARGB(122, 255, 255, 255), Colors.transparent],
-                                        begin: Alignment.center,
-                                        end: Alignment.centerRight,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                  ),
+                            width: double.infinity,
+                            height: 1,
+                            constraints: const BoxConstraints(
+                              maxWidth: 350,
+                            ),
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color.fromARGB(122, 255, 255, 255),
+                                  Colors.transparent
+                                ],
+                                begin: Alignment.center,
+                                end: Alignment.centerRight,
+                              ),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -133,34 +136,37 @@ class DrinkScreen extends StatelessWidget {
                 }).toList(),
               )
             else if (isSpirit)
-            
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 SpiritAnalysis(analysis: aroma, analysisName: 'Aroma',),
-                  SpiritAnalysis(analysis: taste, analysisName: 'Taste',),
-                  SpiritAnalysis(analysis: finish, analysisName: 'Finish',),
+                  SpiritAnalysis(
+                    analysis: aroma,
+                    analysisName: 'Aroma',
+                  ),
+                  SpiritAnalysis(
+                    analysis: taste,
+                    analysisName: 'Taste',
+                  ),
+                  SpiritAnalysis(
+                    analysis: finish,
+                    analysisName: 'Finish',
+                  ),
                 ],
               )
             else
               const SizedBox.shrink(),
-          const Text(
-                      'pussy',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: 'Avenir',
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
+            const Text(
+              'kims yummy pussy',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontFamily: 'Avenir',
+                fontWeight: FontWeight.w900,
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
-
-
-

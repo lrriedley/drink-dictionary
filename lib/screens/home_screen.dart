@@ -62,7 +62,7 @@ class HomeScreenState extends State<HomeScreen> {
             leading: Builder(
               builder: (BuildContext context) {
                 return IconButton(
-                  icon: const Icon(Icons.menu),
+                  icon: const Icon(Icons.menu, color: Colors.white),
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
                   },

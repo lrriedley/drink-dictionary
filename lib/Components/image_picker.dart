@@ -3,7 +3,9 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class UserImagePicker extends StatefulWidget {
-  const UserImagePicker({super.key});
+  const UserImagePicker({super.key, required this.onPickImage});
+
+  final void Function(File pickedImage) onPickImage;
 
   @override
   State<UserImagePicker> createState() => _UserImagePickerState();
@@ -24,20 +26,32 @@ class _UserImagePickerState extends State<UserImagePicker> {
     setState(() {
       _pickedImageFile = File(pickedImage.path);
     });
+    widget.onPickImage(_pickedImageFile!);
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CircleAvatar(
-          radius: 40,
-          backgroundColor: Colors.white,
-          foregroundImage:
-              _pickedImageFile != null ? FileImage(_pickedImageFile!) : null,
-          child: const Icon(
-            Icons.person,
-            color: Color.fromARGB(255, 255, 0, 225),
+        Container(
+          width: 80,
+          height: 80,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.transparent,
+            border: Border.all(
+              color: Colors.white,
+            ),
+          ),
+          child: CircleAvatar(
+            radius: 40,
+            backgroundColor: Colors.transparent,
+            foregroundImage:
+                _pickedImageFile != null ? FileImage(_pickedImageFile!) : null,
+            child: const Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
           ),
         ),
         TextButton(
