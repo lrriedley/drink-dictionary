@@ -7,7 +7,7 @@ import 'package:drink_dictionary/components/drink_card.dart';
 import 'package:drink_dictionary/components/search_bar.dart';
 import 'package:drink_dictionary/drinks.dart';
 import 'package:drink_dictionary/components/alphabet_scroll.dart';
-import 'package:drink_dictionary/Components/side_menu.dart';
+import 'package:drink_dictionary/components/side_menu.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';

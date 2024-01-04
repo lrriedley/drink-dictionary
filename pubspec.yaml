@@ -1,13 +1,14 @@
 name: drink_dictionary
-description: A new Flutter project.
+description: Find your favorite cocktail.
 publish_to: 'none'
-version: 0.1.0
+version: 1.0.0
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
 
 dependencies:
   azlistview: ^2.0.0
+  cloud_firestore: ^4.13.6
   firebase_auth: ^4.15.3
   firebase_core: ^2.24.2
   firebase_storage: ^11.5.6
